@@ -1,0 +1,42 @@
+---
+sidebar_position: 9
+title: Category Label
+---
+
+# Category Label
+
+The **Category Label** card controls the descriptive label displayed alongside the value.
+
+![Category Label formatting card](../images/03-category-label-card.png)
+
+## Properties
+
+| Property | Description | Default |
+|----------|-------------|---------|
+| **Show** *(toggle)* | Master switch — shows or hides the label | On |
+| **Text** | Static label text. Used when no measure is bound to the **Label** data role. | *(empty)* |
+| **Font Color** | Label text color. Supports conditional formatting (fx). | #FFFFFF |
+| **Font** | Font family, size, bold, italic, underline (FontControl) | Segoe UI, 12 px |
+
+## Static text vs data-bound label
+
+The label can come from **two sources**, with the following priority:
+
+1. **Label data role** — a measure or column dragged into the *Label* well (highest priority, dynamic)
+2. **Text** — the static value typed in this card (fallback when no data role is bound)
+
+Use the **Text** field for fixed dashboard labels (`Total Sales`, `Open Tickets`…) and the **Label** data role for dynamic labels that depend on slicers or filters.
+
+## Positioning
+
+By default the label is placed automatically next to the value, controlled by the [Layout](./layout) card's **Auto** group:
+
+- **Vertical Alignment** + **Alignment** decide where the value/label pair sits inside the tile
+- **Spacing** is the gap (in pixels) between the value and the label
+- **Label under Value** forces the label below the value regardless of alignment
+
+For free positioning, switch the [Layout](./layout) card to **Custom** and drag the label, or set its X/Y manually.
+
+## Hiding the label
+
+Turn the **Show** toggle off to remove the label entirely, leaving only the value (and optional prefix and logo) in the tile.

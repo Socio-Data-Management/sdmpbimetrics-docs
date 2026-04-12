@@ -1,0 +1,48 @@
+:root {
+  --ifm-color-primary: #2e5a88;
+  --ifm-color-primary-dark: #294f79;
+  --ifm-color-primary-darker: #264a72;
+  --ifm-color-primary-darkest: #1f3d5e;
+  --ifm-color-primary-light: #336597;
+  --ifm-color-primary-lighter: #366a9e;
+  --ifm-color-primary-lightest: #3d77b2;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+.hero--gradient {
+  background: linear-gradient(135deg, #2e5a88 0%, #4682b4 50%, #87ceeb 100%) !important;
+  --ifm-hero-text-color: #fff;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #4da6e8;
+  --ifm-color-primary-dark: #3299e4;
+  --ifm-color-primary-darker: #258ee0;
+  --ifm-color-primary-darkest: #1e74b9;
+  --ifm-color-primary-light: #68b3ec;
+  --ifm-color-primary-lighter: #75baee;
+  --ifm-color-primary-lightest: #9acef3;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.feature-card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.feature-card h3 {
+  margin-top: 0;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
