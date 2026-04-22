@@ -6,18 +6,25 @@ slug: /getting-started/data-roles
 
 # Data Roles
 
-The MetricTile visual accepts up to four **measure** data roles. Only **Value** is mandatory; the others enrich the tile when present.
+The MetricTile visual accepts five data roles — one **Grouping** and four **Measures**. Only **Value** is mandatory; the others enrich the tile when present.
 
 | Data Role | Type | Description |
 |-----------|------|-------------|
+| **Category** | Grouping | Optional grouping column (e.g. `Planet.Label`). Provides row context for measures and serves as a default label when no Label measure is bound. |
 | **Value** | Measure | The numeric value displayed in the center of the tile |
-| **Label** | Measure | The descriptive label (overrides the static text in the Category Label card) |
+| **Label** | Measure | The descriptive label (overrides the Category value and the static text in the Category Label card) |
 | **Series Color** | Measure | A hex color code (e.g. `#FF0000`) — overrides the shape **From** color and disables gradient |
 | **Logo** | Measure | A base64-encoded image rendered inside the tile |
 
 :::info Single-row visual
 The MetricTile is designed to display a **single value**. The dataView is read with `value.max = 1`, `label.max = 1`, etc. Aggregate your data so each visual instance returns one row per role.
 :::
+
+## Category
+
+The **Category** data role is the only **Grouping** role on the visual. It provides row context for the measures (so they evaluate in the current filter + category) and acts as a **default label** when no Label measure is bound.
+
+Bind a column — typically a dimension key like `Planet.Label` or `Product.Name` — and the visual will read its first value as the tile label.
 
 ## Value
 
@@ -31,7 +38,12 @@ The **Label** data role lets you build a dynamic descriptive label from DAX. For
 TileLabel = "Sales — " & SELECTEDVALUE('Calendar'[Year])
 ```
 
-If **Label** is bound, it takes priority over the static text typed in the **Category Label** card.
+The label text is resolved with the following priority (first non-empty wins):
+
+1. **Label** measure (dynamic, highest priority)
+2. **Category** value (from the Grouping role)
+3. **Text** field in the **Category Label** formatting card (static)
+4. Name of the bound **Value** measure (last-resort fallback)
 
 ## Series Color
 

@@ -3,11 +3,15 @@ sidebar_position: 3
 title: Transform
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Transform
 
 The **Transform** card applies horizontal/vertical mirroring and free rotation to the shape.
 
-![Transform formatting card](../images/03-transform-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src={useBaseUrl("/videos/03-Transform.webm")} type="video/webm" />
+</video>
 
 ## Properties
 

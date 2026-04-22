@@ -5,9 +5,12 @@ title: Corners
 
 # Corners
 
-The **Corners** card defines how each corner of the shape is rendered. Per-corner controls apply to multi-vertex shapes (rectangle, diamond, triangle, parallelogram, trapezoid). Convex/reflex controls apply to star, arrow, chevron and cross shapes.
+The **Corners** card defines how each corner of the shape is rendered. Per-corner controls apply to 4-vertex shapes (rectangle, diamond, parallelogram, trapezoid) and — partially — to the triangle. Convex/reflex controls apply to polygons (pentagon, hexagon, octagon) and to star, arrow, chevron and cross shapes.
 
-![Corners formatting card](../images/03-corners-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src="/sdmpbimetrics-docs/videos/03-Corners.mp4" type="video/mp4" />
+</video>
+[Corners, rounded, right-angled inward or outward ](/videos/03-Corners.mp4)
 
 ## Properties
 
@@ -45,7 +48,7 @@ where `θ` is the angle at the vertex. This ensures consistent visual rounding a
 | Shape category | Corner controls used |
 |----------------|-------------------|
 | Rectangle, Diamond, Parallelogram, Trapezoid | Top Left / Top Right / Bottom Left / Bottom Right |
-| Triangle | Top Left / Top Right / Bottom Left (3 vertices) |
+| Triangle | Top Right / Bottom Left / Bottom Right (Top Left is hidden) |
 | Pentagon, Hexagon, Octagon | Convex Angles only |
 | Star (5), Star (6), Arrow, Chevron, Cross | Convex Angles + Reflex Angles |
 | Circle, Ellipse, Pill, Heart | None (curved paths) |

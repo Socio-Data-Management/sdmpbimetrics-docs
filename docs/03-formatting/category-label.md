@@ -20,12 +20,14 @@ The **Category Label** card controls the descriptive label displayed alongside t
 
 ## Static text vs data-bound label
 
-The label can come from **two sources**, with the following priority:
+The label can come from **four sources**, with the following priority (first non-empty wins):
 
-1. **Label data role** — a measure or column dragged into the *Label* well (highest priority, dynamic)
-2. **Text** — the static value typed in this card (fallback when no data role is bound)
+1. **Label data role** — a measure dragged into the *Label* well (highest priority, dynamic)
+2. **Category data role** — the value of the Grouping column, if bound
+3. **Text** — the static value typed in this card
+4. Name of the bound **Value** measure (last-resort fallback)
 
-Use the **Text** field for fixed dashboard labels (`Total Sales`, `Open Tickets`…) and the **Label** data role for dynamic labels that depend on slicers or filters.
+Use the **Text** field for fixed dashboard labels (`Total Sales`, `Open Tickets`…), the **Category** role to reuse a dimension as a label, and the **Label** data role for fully dynamic labels that depend on slicers or filters.
 
 ## Positioning
 

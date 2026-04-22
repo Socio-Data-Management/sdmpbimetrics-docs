@@ -14,9 +14,10 @@ slug: /getting-started/quick-start
 ## Bind your data
 
 1. Drag a measure to the **Value** data well — this is the number that will be displayed
-2. *(Optional)* Drag a measure or column to the **Label** well — this becomes the descriptive text
-3. *(Optional)* Drag a measure returning a hex color to **Series Color** — to drive the tile color from data
-4. *(Optional)* Drag a measure returning a base64 image to **Logo** — to embed an image in the tile
+2. *(Optional)* Drag a grouping column to **Category** — provides row context and serves as a default label
+3. *(Optional)* Drag a measure to the **Label** well — this becomes the descriptive text (overrides Category)
+4. *(Optional)* Drag a measure returning a hex color to **Series Color** — to drive the tile color from data
+5. *(Optional)* Drag a measure returning a base64 image to **Logo** — to embed an image in the tile
 
 The tile renders immediately with the default rectangle shape and the configured palette color.
 

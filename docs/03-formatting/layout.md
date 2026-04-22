@@ -2,12 +2,16 @@
 sidebar_position: 2
 title: Layout
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Layout
 
 The **Layout** card controls how the **Value** and **Label** text blocks are positioned inside the tile. It is a composite card with three groups: **Mode**, **Auto** and **Custom**.
 
-![Layout formatting card](../images/03-layout-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src={useBaseUrl("/videos/03-Layout.webm")} type="video/webm" />
+</video>
+
 
 ## Mode
 
