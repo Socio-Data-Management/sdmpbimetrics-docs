@@ -25,12 +25,23 @@ SDM MetricTile is available in two editions:
 - Email support
 - Licensed per organization
 
-## Entering a License Key
+## Purchasing from Microsoft AppSource
+To purchase a Pro license, visit the [Microsoft AppSource listing](https://appsource.microsoft.com/en-us/product/power-bi-visuals/sdmpbimetrics) and click on the **Get it now** button. Follow the prompts to complete the purchase process. Once you have a valid license, powerBi will automatically detect it and unlock the Pro features.
 
+## Entering a License Key
+Another mean to get a Pro license is by purchasing directly from Socio-DM, especially for volume licensing or if you want to purchase multiple visuals or receiving a key from your organization. To activate the Pro features with a license key:
+### Directly for one visual
 1. Select the visual in your report
 2. Open the **Format** pane
 3. Expand the **License** card
 4. Paste your license key into the **License Key** field
+
+### For bulk activation across multiple visuals in your report
+If you have a volume license covering multiple visuals, you will receive a Theme (.json) file to easily apply the license across all your Socio-DM purchased instances.
+
+### For bulk activation across an entire organization
+If your organization has purchased a site license, you can distribute the Theme file containing the license to all report writers in your organization. Applying this Theme to any report will automatically unlock the Pro features on
+all purchased visuals without the need to enter individual license keys.
 
 The license is validated automatically. The watermark disappears once a valid Pro license is detected.
 
@@ -38,9 +49,8 @@ The license is validated automatically. The watermark disappears once a valid Pr
 
 To view your current license status:
 
-1. **Right-click** on the visual
-2. Select **About** in the context menu
-3. The About dialog shows:
+1. **Click on the small (i) icon at the top right corner** in the visual
+2. The About dialog shows:
    - **Name** — Socio-DM MetricTile
    - **Version** — current visual version
    - **Plan** — Free or Pro

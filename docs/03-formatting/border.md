@@ -3,11 +3,15 @@ sidebar_position: 5
 title: Border
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Border
 
 The **Border** card draws an outline around the shape.
 
-![Border formatting card](../images/03-border-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src={useBaseUrl("/videos/03-Borders.webm")} type="video/webm" />
+</video>
 
 ## Properties
 

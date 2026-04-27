@@ -2,12 +2,15 @@
 sidebar_position: 7
 title: Logo
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Logo
 
 The **Logo** card controls the size and position of the image bound to the **Logo** data role.
 
-![Logo formatting card](../images/03-logo-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src={useBaseUrl("/videos/03-Logo.webm")} type="video/webm" />
+</video>
 
 ## Properties
 

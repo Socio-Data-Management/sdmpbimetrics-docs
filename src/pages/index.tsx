@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -22,7 +23,7 @@ function HomepageHeader() {
           </Link>
         </div>
         <div className={styles.heroImage}>
-          <img src="/sdmpbimetrictile-docs/img/hero-screenshot.png" alt="SDM MetricTile" />
+          <img src={useBaseUrl("/img/hero-screenshot.png")} alt="SDM MetricTile" />
         </div>
       </div>
     </header>

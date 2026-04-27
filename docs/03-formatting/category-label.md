@@ -9,6 +9,7 @@ The **Category Label** card controls the descriptive label displayed alongside t
 
 ![Category Label formatting card](../images/03-category-label-card.png)
 
+
 ## Properties
 
 | Property | Description | Default |
@@ -16,7 +17,11 @@ The **Category Label** card controls the descriptive label displayed alongside t
 | **Show** *(toggle)* | Master switch — shows or hides the label | On |
 | **Text** | Static label text. Used when no measure is bound to the **Label** data role. | *(empty)* |
 | **Font Color** | Label text color. Supports conditional formatting (fx). | #FFFFFF |
-| **Font** | Font family, size, bold, italic, underline (FontControl) | Segoe UI, 12 px |
+| **Font Family** | Font family used for the label | Segoe UI |
+| **Font Size** | Font size in pixels (4–200). Supports conditional formatting (fx). | 12 |
+| **Bold / Italic / Underline** | Standard text style toggles | Off |
+
+The **Font Size** also supports the **fx** button — see [Conditional font size — DAX recipes](./conditional-font-size) for examples.
 
 ## Static text vs data-bound label
 

@@ -2,12 +2,16 @@
 sidebar_position: 6
 title: Effects
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Effects
 
 The **Effects** card is a composite card grouping three visual effects: **Shadow**, **Glow** and **Edge**.
 
-![Effects formatting card](../images/03-effects-card.png)
+<video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
+  <source src={useBaseUrl("/videos/03-Effects.webm")} type="video/webm" />
+</video>
+
 
 ## Shadow
 

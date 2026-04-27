@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'SDM MetricTile',
   tagline: 'Advanced shape tile with effects, drag positioning, and data-driven styling for Power BI',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   themes: [
     [
@@ -68,10 +68,6 @@ const config: Config = {
     },
     navbar: {
       title: 'SDM MetricTile',
-      logo: {
-        alt: 'SDM Logo',
-        src: 'img/logo.svg',
-      },
       items: [
         {
           type: 'docSidebar',

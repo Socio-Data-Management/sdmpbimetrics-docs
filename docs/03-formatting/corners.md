@@ -2,15 +2,16 @@
 sidebar_position: 4
 title: Corners
 ---
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Corners
 
 The **Corners** card defines how each corner of the shape is rendered. Per-corner controls apply to 4-vertex shapes (rectangle, diamond, parallelogram, trapezoid) and — partially — to the triangle. Convex/reflex controls apply to polygons (pentagon, hexagon, octagon) and to star, arrow, chevron and cross shapes.
 
 <video autoPlay loop muted playsInline style={{ maxWidth: "100%", border: "1px solid #ccc", borderRadius: "4px" }}>
-  <source src="/sdmpbimetrics-docs/videos/03-Corners.mp4" type="video/mp4" />
+  <source src={useBaseUrl("/videos/03-Corners.webm")} type="video/webm" />
 </video>
-[Corners, rounded, right-angled inward or outward ](/videos/03-Corners.mp4)
+
 
 ## Properties
 

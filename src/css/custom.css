@@ -46,3 +46,89 @@
   gap: 1.5rem;
   margin: 2rem 0;
 }
+
+/* ── Socio DM watermark in navbar ─────────────────────────────── */
+
+.sdm-navbar-brand {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none !important;
+}
+
+.sdm-navbar-watermark {
+    position: relative;
+    font-family: 'Segoe UI', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.sdm-navbar-watermark::before {
+    content: "";
+    position: absolute;
+    top: -2px; right: -2px; bottom: -2px; left: 150%;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #ff1a1a, #ff8000, #ffff00, #00ff00, #00ffff, #1a75ff);
+    z-index: 0;
+    opacity: 0;
+    box-shadow: 0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,26,26,0.4);
+    transition: left 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease;
+}
+.sdm-navbar-watermark::after {
+    content: "";
+    position: absolute;
+    top: 2px; right: 2px; bottom: 2px; left: 2px;
+    background-color: rgba(0,0,0,0.85);
+    border-radius: 10px;
+    z-index: 1;
+}
+.sdm-navbar-watermark:hover::before {
+    left: -2px;
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(255,255,255,0.6), 0 0 20px rgba(255,26,26,0.5);
+}
+.sdm-navbar-watermark:hover {
+    text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+.sdm-navbar-watermark .sdm-watermark-logo {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    font-style: normal;
+    color: #e8e0d0;
+    text-shadow: 0 0 2px rgba(255,255,255,0.3);
+    white-space: nowrap;
+}
+.sdm-navbar-watermark .sdm-logo-socio {
+    font-family: 'Century Gothic', 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+.sdm-navbar-watermark .sdm-logo-dm {
+    font-family: 'Century Gothic', 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    font-size: 6.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+.sdm-navbar-watermark:hover .sdm-watermark-logo {
+    text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+.sdm-navbar-watermark > span:first-child {
+    position: relative;
+    z-index: 2;
+}
+
