@@ -25,8 +25,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://socio-data-management.github.io',
-  baseUrl: '/sdmpbimetrics-docs/',
+  url: 'https://docs-metrics.socio-dm.com',
+  baseUrl: '/',
 
   organizationName: 'Socio-Data-Management',
   projectName: 'sdmpbimetrics-docs',
