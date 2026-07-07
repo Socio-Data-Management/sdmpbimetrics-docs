@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksdmpbimetrictile_docs=globalThis.webpackChunksdmpbimetrictile_docs||[]).push([[647],{7121(e,s,r){r.r(s),r.d(s,{default:()=>u});r(6540);var c=r(4164),i=r(6578),t=r(6413),a=r(2831),l=r(6680),d=r(4848);function u(e){return(0,d.jsx)(t.e3,{className:(0,c.A)(i.G.wrapper.docsPages),children:(0,d.jsx)(l.A,{children:(0,a.v)(e.route.routes)})})}}}]);
