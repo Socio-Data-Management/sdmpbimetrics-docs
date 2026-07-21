@@ -7,7 +7,7 @@ title: Value
 
 The **Value** card controls the formatting of the main numeric value displayed in the tile.
 
-![Value formatting card](../images/03-value-card.png)
+![Value formatting card](../../images/03-value-card.png)
 
 ## Properties
 

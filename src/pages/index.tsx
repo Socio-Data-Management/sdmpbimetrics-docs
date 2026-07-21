@@ -18,12 +18,15 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/introduction/overview">
-            Get Started
+          <Link className="button button--secondary button--lg" to="/docs/metrictile/introduction/overview">
+            MetricTile Docs
+          </Link>
+          <Link className="button button--secondary button--lg" to="/docs/funnel/introduction/overview">
+            Funnel Docs
           </Link>
         </div>
         <div className={styles.heroImage}>
-          <img src={useBaseUrl("/img/hero-screenshot.png")} alt="SDM MetricTile" />
+          <img src={useBaseUrl("/img/hero-screenshot.png")} alt="SDM Metrics" />
         </div>
       </div>
     </header>
@@ -43,28 +46,22 @@ function FeatureCard({title, description, link, icon}: {title: string, descripti
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout title={siteConfig.title} description="Documentation for SDM MetricTile — advanced shape tile for Power BI">
+    <Layout title={siteConfig.title} description="Documentation for Socio-DM's custom Power BI visuals — MetricTile and Funnel">
       <HomepageHeader />
       <main>
         <div className="container" style={{padding: '3rem 0'}}>
           <div className="feature-grid">
             <FeatureCard
-              title="17 Shapes"
-              description="Rectangle, circle, ellipse, diamond, triangle, pentagon, hexagon, octagon, stars, arrow, chevron, parallelogram, trapezoid, cross, heart, pill — all with mirror, rotation and per-corner customization."
-              link="/docs/formatting/shape"
+              title="MetricTile"
+              description="An advanced shape tile for headline KPIs: 17 shapes, gradients, effects, drag positioning and rotation, data-driven color and logo."
+              link="/docs/metrictile/introduction/overview"
               icon="&#x25C6;"
             />
             <FeatureCard
-              title="Visual Effects"
-              description="Linear gradients (4 directions), drop shadow, glow, edge softening, border styles. All effects integrated in unified fitting so the tile never overflows."
-              link="/docs/formatting/effects"
-              icon="&#x2728;"
-            />
-            <FeatureCard
-              title="Drag & Data-Driven"
-              description="Drag value, label and logo to any position in edit mode. Series color and series logo can be controlled directly from your data model."
-              link="/docs/getting-started/data-roles"
-              icon="&#x1F3AF;"
+              title="Funnel Tile"
+              description="A multi-step funnel with leakage tracking, statistical significance testing against a benchmark segment, competitor comparison and up to 8 extra columns."
+              link="/docs/funnel/introduction/overview"
+              icon="&#x1F4C9;"
             />
           </div>
         </div>

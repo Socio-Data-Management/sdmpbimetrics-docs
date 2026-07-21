@@ -7,7 +7,7 @@ title: Prefix Label
 
 The **Prefix Label** card adds an optional short text that appears **in front of** the value — typically a currency symbol, a unit or a signed indicator.
 
-![Prefix Label formatting card](../images/03-prefix-label-card.png)
+![Prefix Label formatting card](../../images/03-prefix-label-card.png)
 
 ## Properties
 

@@ -7,7 +7,7 @@ title: Shape
 
 The **Shape** card controls the geometric form of the tile, its fill color and an optional gradient.
 
-![Shape formatting card](../images/03-shape-card.png)
+![Shape formatting card](../../images/03-shape-card.png)
 
 ## Properties
 

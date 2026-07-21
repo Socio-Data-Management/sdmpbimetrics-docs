@@ -1,20 +1,21 @@
 ---
 sidebar_position: 1
 title: Licensing
-slug: /metrictile/licensing
+slug: /funnel/licensing
 ---
 
 # Licensing
 
 ## Editions
 
-SDM MetricTile is available in two editions:
+SDM Funnel is available in two editions:
 
 ### Free
 
-- All shapes, gradients, effects and formatting cards
-- Data-driven color and logo
-- Drag positioning and rotation
+- Any number of steps and groups
+- Leakage tracking and significance testing
+- Competitor comparison (Second/Third Partition)
+- Up to 8 extra columns
 - **"Powered by Socio DM" watermark** displayed on the visual
 - Community support
 
@@ -26,7 +27,7 @@ SDM MetricTile is available in two editions:
 - Licensed per organization
 
 ## Purchasing from Microsoft AppSource
-To purchase a Pro license, visit the [Microsoft AppSource listing](https://appsource.microsoft.com/en-us/product/power-bi-visuals/sdmpbimetrics) and click on the **Get it now** button. Follow the prompts to complete the purchase process. Once you have a valid license, powerBi will automatically detect it and unlock the Pro features.
+To purchase a Pro license, search for **"SDM Funnel"** on the [Microsoft AppSource](https://appsource.microsoft.com) marketplace and click **Get it now**. Follow the prompts to complete the purchase process. Once you have a valid license, Power BI will automatically detect it and unlock the Pro features.
 
 ## Entering a License Key
 Another mean to get a Pro license is by purchasing directly from Socio-DM, especially for volume licensing or if you want to purchase multiple visuals or receiving a key from your organization. To activate the Pro features with a license key:
@@ -51,7 +52,7 @@ To view your current license status:
 
 1. **Click on the small (i) icon at the top right corner** in the visual
 2. The About dialog shows:
-   - **Name** — Socio-DM MetricTile
+   - **Name** — Socio-DM Funnel
    - **Version** — current visual version
    - **Plan** — Free or Pro
    - **Licensed to** — organization name (Pro only)
@@ -59,7 +60,7 @@ To view your current license status:
 
 ## Microsoft Fabric Licensing
 
-The MetricTile also supports licensing through **Microsoft Fabric** subscriptions. When the visual is deployed in a Fabric workspace with an active SDM subscription, the Pro plan is detected automatically **without requiring a manual license key**.
+The Funnel visual also supports licensing through **Microsoft Fabric** subscriptions. When the visual is deployed in a Fabric workspace with an active SDM subscription, the Pro plan is detected automatically **without requiring a manual license key**.
 
 License resolution priority:
 

@@ -7,7 +7,7 @@ title: Conditional font size
 
 The **Font Size** slice on the **Value**, **Category Label** and **Prefix Label** cards supports **conditional formatting** (the small **fx** button). The size in pixels can therefore be driven by a DAX measure — useful when several MetricTile visuals share a page and you want the most important one to stand out.
 
-![Conditional font size dialog](../images/03-conditional-font-size.png)
+![Conditional font size dialog](../../images/03-conditional-font-size.png)
 
 ## How to bind a measure to font size
 

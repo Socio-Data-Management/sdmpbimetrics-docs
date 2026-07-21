@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: Quick Start
-slug: /getting-started/quick-start
+slug: /metrictile/getting-started/quick-start
 ---
 
 # Quick Start

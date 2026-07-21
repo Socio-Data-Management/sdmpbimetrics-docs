@@ -1,0 +1,8 @@
+{
+  "label": "Funnel Tile",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "funnel/introduction/overview"
+  }
+}

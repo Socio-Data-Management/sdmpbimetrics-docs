@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: Data Roles
-slug: /getting-started/data-roles
+slug: /metrictile/getting-started/data-roles
 ---
 
 # Data Roles

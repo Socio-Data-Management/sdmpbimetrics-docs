@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'SDM MetricTile',
-  tagline: 'Advanced shape tile with effects, drag positioning, and data-driven styling for Power BI',
+  title: 'SDM Metrics',
+  tagline: 'Custom Power BI visuals by Socio-DM — MetricTile and Funnel',
   favicon: 'img/favicon.svg',
 
   themes: [
@@ -67,7 +67,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'SDM MetricTile',
+      title: 'SDM Metrics',
       items: [
         {
           type: 'docSidebar',
@@ -86,13 +86,23 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Documentation',
+          title: 'MetricTile',
           items: [
-            { label: 'Overview', to: '/docs/introduction/overview' },
-            { label: 'Quick Start', to: '/docs/getting-started/quick-start' },
-            { label: 'Data Roles', to: '/docs/getting-started/data-roles' },
-            { label: 'Formatting', to: '/docs/formatting/shape' },
-            { label: 'Licensing', to: '/docs/licensing' },
+            { label: 'Overview', to: '/docs/metrictile/introduction/overview' },
+            { label: 'Quick Start', to: '/docs/metrictile/getting-started/quick-start' },
+            { label: 'Data Roles', to: '/docs/metrictile/getting-started/data-roles' },
+            { label: 'Formatting', to: '/docs/metrictile/formatting/shape' },
+            { label: 'Licensing', to: '/docs/metrictile/licensing' },
+          ],
+        },
+        {
+          title: 'Funnel Tile',
+          items: [
+            { label: 'Overview', to: '/docs/funnel/introduction/overview' },
+            { label: 'Quick Start', to: '/docs/funnel/getting-started/quick-start' },
+            { label: 'Data Roles', to: '/docs/funnel/getting-started/data-roles' },
+            { label: 'Formatting', to: '/docs/funnel/formatting/global-settings' },
+            { label: 'Licensing', to: '/docs/funnel/licensing' },
           ],
         },
         {

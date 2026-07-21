@@ -7,7 +7,7 @@ title: Category Label
 
 The **Category Label** card controls the descriptive label displayed alongside the value.
 
-![Category Label formatting card](../images/03-category-label-card.png)
+![Category Label formatting card](../../images/03-category-label-card.png)
 
 
 ## Properties

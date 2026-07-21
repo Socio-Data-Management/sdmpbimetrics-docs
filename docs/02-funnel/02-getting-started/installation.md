@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Installation
-slug: /metrictile/getting-started/installation
+slug: /funnel/getting-started/installation
 ---
 
 # Installation
@@ -10,7 +10,7 @@ slug: /metrictile/getting-started/installation
 
 1. Open your Power BI report
 2. In the Visualizations pane, click the **...** (Get more visuals)
-3. Search for **"SDM MetricTile"**
+3. Search for **"SDM Funnel"**
 4. Click **Add**
 
 The visual will appear in your Visualizations pane.

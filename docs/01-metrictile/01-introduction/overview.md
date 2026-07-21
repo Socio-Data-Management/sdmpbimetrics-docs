@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
 title: Overview
-slug: /introduction/overview
+slug: /metrictile/introduction/overview
 ---
 
 # SDM MetricTile
 
 The **SDM MetricTile** is a custom Power BI visual that displays a single numeric metric inside a richly customizable shape tile. It is designed as a flexible alternative to Power BI's built-in card visual, with full control over shape, color, gradient, effects, typography and positioning.
 
-![SDM MetricTile — example tiles](../images/01-overview-hero.png)
+![SDM MetricTile — example tiles](../../images/01-overview-hero.png)
 
 ## Key Features
 
