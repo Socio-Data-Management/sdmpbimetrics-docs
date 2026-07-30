@@ -18,7 +18,7 @@ The **Second Partition** card binds an optional competitor, market, or benchmark
 
 ## How the comparison leakage is computed
 
-Unlike the main funnel, the Second Partition doesn't use Base/Avg. Segment/Segment Base — it simply shows the **step-to-step drop-off (%)** of its own Score measure, using the same step order as the main funnel. No significance test is applied to comparison partitions.
+Unlike the main funnel, the Second Partition doesn't use Base/Comparison/Comparison base — it simply shows the **step-to-step drop-off (%)** of its own Score measure, using the same step order as the main funnel. No significance test is applied to comparison partitions.
 
 ## Combining with Third Partition
 

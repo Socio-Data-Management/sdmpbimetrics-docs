@@ -6,13 +6,13 @@ slug: /funnel/getting-started/data-roles
 
 # Data Roles
 
-Unlike a typical Power BI visual where each field well has one specific meaning, the Funnel visual exposes **three data roles**, and one of them — **Values** — is a single bucket that holds *every* measure the visual might need (scores, bases, segment averages, logos, extra-column measures…). Once your measures are in that bucket, you tell the visual **which measure plays which role** from dropdowns inside the **Format pane** cards (Main Partition, Second/Third Partition, Group Header, Column *N*…).
+Unlike a typical Power BI visual where each field well has one specific meaning, the Funnel visual exposes **three data roles**, and one of them — **Values** — is a single bucket that holds *every* measure the visual might need (scores, bases, comparison values, logos, extra-column measures…). Once your measures are in that bucket, you tell the visual **which measure plays which role** from dropdowns inside the **Format pane** cards (Main Partition, Second/Third Partition, Group Header, Column *N*…).
 
 | Data Role | Type | Description |
 |-----------|------|-------------|
 | **Funnel Steps** | Grouping | Categorical dimension whose distinct values become the funnel's steps (e.g. `Awareness`, `Familiarity`, `Consideration`, `Purchase`) |
 | **Group By** | Grouping | Optional grouping that repeats the whole funnel per value (e.g. one funnel per `Country`) |
-| **Values** | Measure (many) | All measures: scores, bases, segment averages, logos (base64)… assigned to a role from the Format pane |
+| **Values** | Measure (many) | All measures: scores, bases, comparison values, logos (base64)… assigned to a role from the Format pane |
 
 ## Funnel Steps
 
@@ -28,14 +28,14 @@ Optional. Bind a column here (e.g. `Country`, `Brand`) to draw **one funnel per 
 
 ## Values
 
-Drag **every measure you need** into this single well — there is no need to bind them one at a time to specific roles. Once they're in the Values bucket, each Format pane card that needs a measure exposes its own dropdown (Score, Base, Avg. Segment measure, Segment Base measure, Logo…) listing everything available in Values. See:
+Drag **every measure you need** into this single well — there is no need to bind them one at a time to specific roles. Once they're in the Values bucket, each Format pane card that needs a measure exposes its own dropdown (Score, Comparison measure, Comparison base measure, Logo…) listing everything available in Values. See:
 
-- [Main Partition](../formatting/main-partition) — the primary funnel's Score / Base / Avg. Segment / Segment Base
+- [Main Partition](../formatting/main-partition) — the primary funnel's Score / Base / Comparison / Comparison base
 - [Second Partition](../formatting/second-partition) / [Third Partition](../formatting/third-partition) — competitor/benchmark comparison scores
 - [Group Header](../formatting/group-header) — optional per-group logo measure
 - [Columns](../formatting/columns) — up to 8 extra per-step measures
 
-### Score, Base, Avg. Segment, Segment Base — what they mean
+### Score, Base, Comparison, Comparison base — what they mean
 
 These four measure roles power both the **on-bar value** and the **statistical significance test**:
 
@@ -43,23 +43,23 @@ These four measure roles power both the **on-bar value** and the **statistical s
 |------|---------|
 | **Score** | The group's value at this step — typically a percentage of respondents/customers who reached this step |
 | **Base** | The group's respondent/sample count at this step — the denominator behind Score |
-| **Avg. Segment** | The benchmark (segment, category, market…) average Score to test the group against |
-| **Segment Base** | The benchmark's respondent/sample count — the denominator behind Avg. Segment |
+| **Comparison** | The reference value to test the group's Score against. Despite the name, it doesn't have to be a "segment average" — it can be any comparable figure: another category, another year, another product line, a market benchmark… |
+| **Comparison base** | The comparison's respondent/sample count — the denominator behind Comparison |
 
-Only **Score** is mandatory. Base + Avg. Segment + Segment Base are optional, but **all three are required together** to unlock significance testing (colored leakage pills and column cells) for a given step — if any of the three is missing or non-positive, that step's significance falls back to *neutral*.
+Only **Score** is mandatory. Base + Comparison + Comparison base are optional, but **all three are required together** to unlock significance testing (colored leakage pills and column cells) for a given step — if any of the three is missing or non-positive, that step's significance falls back to *neutral*.
 
 :::warning Scale: 0–100, not 0–1
-Score, Avg. Segment and any per-column equivalents are expected to be numbers **on a 0–100 scale** (e.g. `42.5` for "42.5%"), because the significance formulas divide by 100 internally. Format these measures as a **plain number** in your model (e.g. `0.0`) rather than **Percentage** — a Percentage format whose underlying value is already `0–100` would be displayed ×100 too high on the funnel bars.
+Score, Comparison and any per-column equivalents are expected to be numbers **on a 0–100 scale** (e.g. `42.5` for "42.5%"), because the significance formulas divide by 100 internally. Format these measures as a **plain number** in your model (e.g. `0.0`) rather than **Percentage** — a Percentage format whose underlying value is already `0–100` would be displayed ×100 too high on the funnel bars.
 :::
 
 ### Significance testing
 
 The **Global Settings → Options → Significance level** dropdown (90/95/99%) sets the z-score threshold for a standard **two-proportion z-test**, applied in two places:
 
-- **Leakage pills** — is the group's step-to-step drop-off significantly worse (red) or better (green) than the segment's own drop-off between the same two steps?
-- **Column cells** — is the group's Score at this step significantly above (red) or below (green) its own Avg. Segment?
+- **Leakage pills** — is the group's step-to-step drop-off significantly worse (red) or better (green) than the comparison's own drop-off between the same two steps?
+- **Column cells** — is the group's Score at this step significantly above (red) or below (green) its own Comparison?
 
-Turn on **Exclude group from segment avg.** when your **Avg. Segment** measure is computed *including* the group's own respondents (a common setup when the "segment" is simply "all groups combined"). The visual then mathematically removes the group's contribution from the segment average and its base before running the test, avoiding a group being compared against a benchmark that partly contains itself.
+Turn on **Exclude group from comparison** when your **Comparison** measure is computed *including* the group's own respondents (a common setup when the comparison is simply "all groups combined"). The visual then mathematically removes the group's contribution from the comparison average and its base before running the test, avoiding a group being compared against a benchmark that partly contains itself.
 
 ## Logos
 
@@ -67,4 +67,4 @@ Both the **Group Header** logo and the **Main/Second/Third Partition** logos acc
 
 ## Extra columns
 
-Beyond the funnel bars, up to **8 extra columns** of data can be shown per step (e.g. NPS, satisfaction, repeat-purchase rate). Each column has its own Score / Base / Avg. Segment / Segment Base measures, display mode (Value, Gap vs. the main score, or both) and colors. See [Columns](../formatting/columns) and [Additional Table](../formatting/additional-table) for the two ways to configure them.
+Beyond the funnel bars, up to **8 extra columns** of data can be shown per step (e.g. NPS, satisfaction, repeat-purchase rate, a rank). Each column has its own **Score type** — **Continuous** (a numeric measure, with Base / Comparison / Comparison base / Precision / Display / colors, exactly like the main funnel) or **Discrete** (an arbitrary text/ordinal value such as "1st"/"2nd", shown as-is with no comparison or coloring). Continuous columns support six display modes (Value, Gap vs. the main score, Comparison value, Comparison Gap, and the "both" combinations of each). See [Columns](../formatting/columns) and [Additional Table](../formatting/additional-table) for the two ways to configure them.

@@ -28,29 +28,43 @@ Each **Column N** card has the same properties:
 | Property | Description | Default |
 |----------|-------------|---------|
 | **Column title** | Header text shown above the funnel at the top of the column (wraps up to 3 lines) | — |
+| **Score type** | *Continuous* or *Discrete* — see [Continuous vs. Discrete columns](#continuous-vs-discrete-columns) below | Continuous |
 | **Score measure** | *(mandatory for the column to render)* The value shown at each step | — |
-| **Base** | Respondent/sample count (for significance testing) | — |
-| **Avg. segment** | Benchmark average to test the column's Score against | — |
-| **Segment base** | Benchmark's respondent/sample count | — |
-| **Display** | *Value*, *Gap* or *Value & Gap* — see below | Value |
-| **Color above avg** | Cell text color when the column's Score is significantly **above** its own Avg. segment | #cc0000 |
-| **Color below avg** | Cell text color when the column's Score is significantly **below** its own Avg. segment | #007700 |
+| **Base** | Respondent/sample count (for significance testing) — *continuous only* | — |
+| **Comparison** | Reference value to test the column's Score against — *continuous only* | — |
+| **Comparison base** | The comparison's respondent/sample count — *continuous only* | — |
+| **Precision** | Decimal places used to render Value/Gap/Comparison figures — *continuous only* | 0 |
+| **Display** | *Value*, *Gap*, *Value & Gap*, *Comparison value*, *Comparison Gap* or *Comparison Value & Gap* — see below — *continuous only* | Value |
+| **Color above comparison** | Cell text color when the column's Score is significantly **above** its own Comparison — *continuous only* | #cc0000 |
+| **Color below comparison** | Cell text color when the column's Score is significantly **below** its own Comparison — *continuous only* | #007700 |
+
+## Continuous vs. Discrete columns
+
+**Score type** controls what kind of value the column holds:
+
+- **Continuous** *(default)* — a numeric measure. Base, Comparison, Comparison base, Precision, Display and the above/below colors are all active, and the column participates in significance testing exactly like the main funnel.
+- **Discrete** — an arbitrary text or ordinal value (e.g. `1st`, `2nd`, a free-text label). The Score measure's raw value is shown as-is, with no rounding, no comparison and no significance coloring — only the column's plain **Font color** applies. Switching to *Discrete* hides Base / Comparison / Comparison base / Precision / Display / Color above/below in both the legacy card and the [Additional Table](./additional-table) gear-icon dialog, since they have no meaning for a discrete value.
 
 ## Display modes
 
+*(Continuous columns only — Discrete columns always just show the raw Score value.)*
+
 | Mode | What's shown |
 |------|--------------|
-| **Value** | The column's own Score, rounded |
-| **Gap** | The difference between the column's Score and the **main funnel's Score** at the same step (`+`/`−`, rounded) |
+| **Value** | The column's own Score, rounded to **Precision** decimals |
+| **Gap** | The difference between the column's Score and the **main funnel's Score** at the same step (`+`/`−`, rounded to **Precision**) |
 | **Value & Gap** | Both — the Score on top, the gap just below, in a slightly smaller font |
+| **Comparison value** | The column's own **Comparison** measure, rounded to **Precision** |
+| **Comparison Gap** | The difference between the column's **Comparison** and its own Score (`comparison − score`, `+`/`−`, rounded to **Precision**) |
+| **Comparison Value & Gap** | Both — the Comparison value on top, the Comparison Gap just below |
 
-:::info Gap is always vs. the Main Partition
-The "gap" is computed against the **[Main Partition](./main-partition)'s** Score at the same step for the same group — not against the column's own Avg. Segment. Use [Global Settings → Gap label](./global-settings#options) to give that comparison a name in your own report documentation.
+:::info Two different "gaps"
+Plain **Gap** is always computed against the **[Main Partition](./main-partition)'s** Score at the same step for the same group. **Comparison Gap** is computed against the column's **own Comparison** measure instead (`comparison − score`) — useful when the column's benchmark isn't the main funnel at all (a different category, year, product…). Use [Global Settings → Gap label](./global-settings#options) to give the plain Gap a name in your own report documentation.
 :::
 
 ## Column-level significance
 
-Independently from the funnel's leakage significance, each column runs its **own** two-proportion z-test: the column's Score vs. its own **Avg. segment**, using the same [Significance level](./global-settings#options) and **Exclude group from segment avg.** setting as the rest of the visual. The cell text is colored with **Color above/below avg** accordingly, or the column's plain font color when the test is inconclusive or the Base/Avg. segment/Segment base aren't all set.
+Independently from the funnel's leakage significance, each **continuous** column runs its **own** two-proportion z-test: the column's Score vs. its own **Comparison**, using the same [Significance level](./global-settings#options) and **Exclude group from comparison** setting as the rest of the visual. The cell text is colored with **Color above/below comparison** accordingly, or the column's plain font color when the test is inconclusive or the Base/Comparison/Comparison base aren't all set. This coloring applies to whichever display mode is active, including the Comparison-based ones.
 
 ## Column typography, width and separators
 

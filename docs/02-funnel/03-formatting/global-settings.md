@@ -14,10 +14,10 @@ The **Global Settings** card is a composite card grouping three unrelated concer
 | **Show extra columns** | Master switch for the [extra columns](./columns) feature | Off |
 | **Number of columns** | How many of the legacy **Column 1…8** cards are active (ignored once the JSON editor has entries — see [Additional Table](./additional-table)) | 0 |
 | **Significance level** | Confidence level for the two-proportion z-test: 90%, 95% or 99% | 95% |
-| **Exclude group from segment avg.** | Enable when the Avg. Segment measure includes the group's own respondents — the group's contribution is mathematically removed from the segment average and base before testing | Off |
+| **Exclude group from comparison** | Enable when the Comparison measure includes the group's own respondents — the group's contribution is mathematically removed from the comparison average and base before testing | Off |
 | **Gap label** | Free-text label associated with the gap figures shown by columns in *Gap* / *Value & Gap* mode | "Gap vs" |
 
-See [Data Roles → Score, Base, Avg. Segment, Segment Base](../getting-started/data-roles#score-base-avg-segment-segment-base--what-they-mean) for what feeds the significance test, and [Leakage](./leakage) / [Columns](./columns) for where the result is shown.
+See [Data Roles → Score, Base, Comparison, Comparison base](../getting-started/data-roles#score-base-comparison-comparison-base--what-they-mean) for what feeds the significance test, and [Leakage](./leakage) / [Columns](./columns) for where the result is shown.
 
 :::info Significance level in practice
 | Level | z-threshold |

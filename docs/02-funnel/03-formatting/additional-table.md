@@ -22,13 +22,15 @@ If you were previously using the legacy **Column 1…8** cards, the dialog opens
 | Field | Type | Notes |
 |-------|------|-------|
 | **Column title** | Text | Spans two grid cells in the dialog |
+| **Score type** | Continuous / Discrete | Default *Continuous* — see [Columns → Continuous vs. Discrete columns](./columns#continuous-vs-discrete-columns) |
 | **Score measure** | Measure picker | Required — a column with no Score is skipped entirely |
-| **Base** | Measure picker | Optional |
-| **Avg. segment** | Measure picker | Optional |
-| **Segment base** | Measure picker | Optional |
-| **Display** | Value / Gap / Value & Gap | Default *Value* — see [Columns → Display modes](./columns#display-modes) |
-| **Color above avg** | Color | Default #cc0000 |
-| **Color below avg** | Color | Default #007700 |
+| **Base** | Measure picker | Optional — hidden when Score type is *Discrete* |
+| **Comparison** | Measure picker | Optional — hidden when Score type is *Discrete* |
+| **Comparison base** | Measure picker | Optional — hidden when Score type is *Discrete* |
+| **Precision** | Number (0–6) | Default 0 — hidden when Score type is *Discrete* |
+| **Display** | Value / Gap / Value & Gap / Comparison value / Comparison Gap / Comparison Value & Gap | Default *Value* — hidden when Score type is *Discrete* — see [Columns → Display modes](./columns#display-modes) |
+| **Color above comparison** | Color | Default #cc0000 — hidden when Score type is *Discrete* |
+| **Color below comparison** | Color | Default #007700 — hidden when Score type is *Discrete* |
 | **Font** | Font family | Default Segoe UI |
 | **Font size** | Number (6–40) | Default 11 |
 | **Font color** | Color | Default #333333 |
@@ -39,6 +41,10 @@ If you were previously using the legacy **Column 1…8** cards, the dialog opens
 | **Separator color** | Color | Default #cccccc |
 
 Click **Add column** to append a new one (up to 8 total); an empty state ("No extra columns yet — click *Add column*.") is shown when none exist yet.
+
+:::tip Fields react live to Score type
+Switching a column's **Score type** between *Continuous* and *Discrete* immediately shows/hides the fields that only make sense for one of the two — no need to save and reopen the dialog. Existing columns saved before this setting existed default to *Continuous*, so nothing changes for reports created earlier.
+:::
 
 ## Behind the scenes
 

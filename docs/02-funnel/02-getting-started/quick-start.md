@@ -14,7 +14,7 @@ slug: /funnel/getting-started/quick-start
 ## Bind your data
 
 1. Drag your funnel stage column (e.g. `Stage.Name`) to **Funnel Steps**
-2. Drag **every measure you'll need** (score, base, avg. segment, segment base…) to **Values** — you'll assign each one's role from the Format pane next
+2. Drag **every measure you'll need** (score, base, comparison, comparison base…) to **Values** — you'll assign each one's role from the Format pane next
 3. *(Optional)* Drag a grouping column to **Group By** to draw one funnel per group value
 
 Nothing renders yet — the visual needs at least a **Score** measure assigned before it can draw a bar.
@@ -29,9 +29,10 @@ The funnel now renders: one tapering bar per distinct value of **Funnel Steps**,
 
 ## Add leakage & significance
 
-1. In **Main Partition**, set **Base measure**, **Avg. segment measure** and **Segment base measure**
-2. The **Leakage** card's pills (step-to-step drop-off %) turn red/green once all four measures are set and a group's leakage is significantly worse/better than the segment's
+1. In **Main Partition**, set **Base measure**, **Comparison measure** and **Comparison base measure**
+2. The **Leakage** card's pills (step-to-step drop-off %) turn red/green once all four measures are set and a group's leakage is significantly worse/better than the comparison's
 3. Adjust **Global Settings → Options → Significance level** (90/95/99%) to control how strict the test is
+4. *(Optional)* Turn on **Leakage → Show legend** to draw a small legend below the funnel explaining what the pill colors mean
 
 ## First customizations
 
