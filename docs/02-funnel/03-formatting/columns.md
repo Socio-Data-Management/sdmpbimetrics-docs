@@ -13,13 +13,13 @@ There are **two ways** to configure extra columns:
 2. **Additional Table** — a single JSON-backed card edited through a **⚙ gear-icon dialog** on the visual — see [Additional Table](./additional-table)
 
 :::info The JSON editor takes over once used
-As soon as the Additional Table JSON has at least one entry, it becomes the **single source of truth** for columns and the legacy **Column 1…8** cards are hidden — even if **Number of columns** is still set. This lets existing reports keep working with the legacy cards until you open the gear-icon editor for the first time, at which point your current column configuration is copied into the JSON as a starting point.
+As soon as the Additional Table JSON has been **saved once from the dialog** — even with zero columns — it becomes the **single source of truth** for columns and the legacy **Column 1…8** cards are hidden, even if **Number of columns** is still set. This lets existing reports keep working with the legacy cards until you open the gear-icon editor and save for the first time, at which point your current column configuration is copied into the JSON as a starting point.
 :::
 
 ## Turning columns on
 
 1. **Global Settings → Options → Show extra columns** must be **on**
-2. **Global Settings → Options → Number of columns** sets how many of the **Column 1…8** cards are shown *(ignored once the JSON editor has entries)*
+2. **Global Settings → Options → Number of columns** sets how many of the **Column 1…8** cards are shown *(ignored once the JSON editor has been saved)*
 
 ## Column N properties (legacy cards)
 
@@ -69,3 +69,7 @@ Independently from the funnel's leakage significance, each **continuous** column
 ## Column typography, width and separators
 
 The legacy **Column N** cards only expose title/measures/display mode/colors — font, column width, header visibility and separator lines are configured **per column** through the [Additional Table](./additional-table) JSON editor (with sensible defaults applied to legacy columns that have no JSON entry: Segoe UI, 11px, #333333, bold, 76px wide, header shown, no separator).
+
+:::info The last column can widen itself
+Every column but the last one has a neighbour to its right, so a value slightly too wide for its cell simply encroaches on that neighbour's padding. The **last** column has nothing to its right except the edge of the visual, so the layout automatically widens it — never below your configured **Column width (px)** — to fit its own widest rendered value or gap, plus room for the [conversion picto](./additional-table#conversion-picto) when that option is on. A figure crossing into an extra digit therefore stays inside the visual instead of being clipped.
+:::

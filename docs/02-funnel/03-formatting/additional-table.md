@@ -31,6 +31,7 @@ If you were previously using the legacy **Column 1…8** cards, the dialog opens
 | **Display** | Value / Gap / Value & Gap / Comparison value / Comparison Gap / Comparison Value & Gap | Default *Value* — hidden when Score type is *Discrete* — see [Columns → Display modes](./columns#display-modes) |
 | **Color above comparison** | Color | Default #cc0000 — hidden when Score type is *Discrete* |
 | **Color below comparison** | Color | Default #007700 — hidden when Score type is *Discrete* |
+| **Display conversion picto** | Checkbox | Default off — hidden when Score type is *Discrete* — see [Conversion picto](#conversion-picto) below |
 | **Font** | Font family | Default Segoe UI |
 | **Font size** | Number (6–40) | Default 11 |
 | **Font color** | Color | Default #333333 |
@@ -46,6 +47,23 @@ Click **Add column** to append a new one (up to 8 total); an empty state ("No ex
 Switching a column's **Score type** between *Continuous* and *Discrete* immediately shows/hides the fields that only make sense for one of the two — no need to save and reopen the dialog. Existing columns saved before this setting existed default to *Continuous*, so nothing changes for reports created earlier.
 :::
 
+## Conversion picto
+
+When **Display conversion picto** is on, a small arrow glyph is drawn just in front of (to the left of) the column's value at **every** step, colored by that step's [column-level significance test](./columns#column-level-significance) against its Comparison.
+
+| Test result | Picto color |
+|-------------|-------------|
+| Significantly **above** the Comparison | **Color above comparison** *(default #cc0000)* |
+| Significantly **below** the Comparison | **Color below comparison** *(default #007700)* |
+| Neutral, or not tested (Base / Comparison / Comparison base not all set) | Gray *(#888888)* |
+
+- The picto's horizontal space is reserved for the whole column as soon as the option is on, so figures stay aligned from row to row.
+- Doesn't apply to *Discrete* columns, which have no significance test to react to.
+
 ## Behind the scenes
 
-The dialog persists its entries as a single **JSON array** in the **Columns (JSON)** property of the Additional Table card. As soon as that array has at least one entry, it fully replaces the legacy **Column 1…8** cards — see [Columns → The JSON editor takes over once used](./columns#turning-columns-on).
+The dialog persists its entries as a single **JSON array** in the **Columns (JSON)** property of the Additional Table card. As soon as that property has been **saved once** — even as an explicitly empty array — it fully replaces the legacy **Column 1…8** cards — see [Columns → The JSON editor takes over once used](./columns#turning-columns-on).
+
+:::tip Removing every column
+Clearing all columns from the dialog and saving leaves an empty JSON array, not an unset property. The legacy cards therefore stay hidden and reopening the editor shows the empty state rather than re-seeding itself from **Column 1…8** — the funnel simply renders with no extra columns, which is what you asked for.
+:::
