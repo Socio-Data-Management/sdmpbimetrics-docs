@@ -18,11 +18,26 @@ The **SDM Funnel** is a custom Power BI visual that displays a multi-step funnel
 | **Significance testing** | A two-proportion z-test flags whether a group's score — or its leakage — is significantly above/below a **Comparison** (a segment average, another category, another year… whatever you bind), at a 90/95/99% confidence level |
 | **Competitor comparison** | Up to two additional "partitions" (Second / Third) overlay their own leakage % on the left of the funnel, connected by a configurable arrow shape |
 | **Up to 8 extra columns** | Each step can show either a **Continuous** measure (Value, Gap vs. the main score, Comparison value, Comparison Gap, or the combined variants, with configurable Precision and colored by significance) or a **Discrete** text/ordinal value (e.g. "1st", "2nd") shown as-is — editable via a JSON dialog behind a ⚙ gear icon |
+| **Report interactivity** | Each bar is a real data point: click to cross-filter the rest of the page, hover for a tooltip, right-click for the standard Power BI menu — see [Interactivity](#interactivity) below |
 | **Group header** | Optional logo and/or name above each group's funnel |
 | **Decorative frame** | Optional card/frame around each group, with background, shadow and halo |
 | **Full typography control** | Independent font family/size/style for the value, step label, competitor text, column cells and leakage legend |
 | **Localization** | Format pane fully localized in 10 languages |
 | **Licensing & watermark** | Free / Pro plans, watermark removed with a valid key |
+
+## Interactivity
+
+Every bar is one data point — the intersection of a **step** and a **group** — and behaves like a data point in any native Power BI visual:
+
+| Gesture | What happens |
+|---------|--------------|
+| **Click a bar** | Selects that step for that group and cross-filters the other visuals on the page. Bars outside the selection dim so the selected one stays legible. |
+| **Ctrl / ⌘ + click** | Adds to the selection instead of replacing it — pick several steps, or the same step across several groups. |
+| **Click elsewhere in the visual** | Clears the selection. |
+| **Hover a bar** | Shows a tooltip with the group, the step, its score, and the step-to-step leakage when one applies — followed by any measure bound to the [Tooltips](../getting-started/data-roles#tooltips) role. |
+| **Right-click a bar** | Opens the standard Power BI context menu (drill-through, *Include* / *Exclude*, …) for that data point. |
+
+Selections made in other visuals are reflected back on the funnel, and the visual respects the report's *Edit interactions* settings — where a report author has switched interactions off, clicks and the context menu are inert.
 
 ## Editions
 
