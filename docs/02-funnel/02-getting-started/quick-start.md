@@ -32,7 +32,7 @@ The funnel now renders: one tapering bar per distinct value of **Funnel Steps**,
 1. In **Main Partition**, set **Base measure**, **Comparison measure** and **Comparison base measure**
 2. The **Leakage** card's pills (step-to-step drop-off %) turn red/green once all four measures are set and a group's leakage is significantly worse/better than the comparison's
 3. Adjust **Leakage → Significance level** (90/95/99%) to control how strict the test is
-4. *(Optional)* Turn on **Leakage → Show legend** to draw a small legend below the funnel explaining what the pill colors mean
+4. *(Optional)* Turn on **Leakage → Show legend** to draw a small legend below the funnel explaining what the significance colors mean (leakage pills and extra columns)
 
 ## First customizations
 

@@ -64,7 +64,7 @@ When [Global Settings → Ascending funnel](./global-settings#ascending-funnel) 
 
 ## Legend
 
-An optional legend can be drawn below the funnel, explaining what each pill color means in plain text — useful when the visual is shared without this documentation at hand.
+An optional legend can be drawn below the funnel, explaining what each significance color means in plain text (pills and extra columns) — useful when the visual is shared without this documentation at hand.
 
 | Property | Description | Default |
 |----------|-------------|---------|
@@ -77,4 +77,9 @@ An optional legend can be drawn below the funnel, explaining what each pill colo
 | **Below label** | Text next to the below/good color swatch | "Significantly lower leakage" |
 | **Suffix** | Optional extra text appended after the labels (e.g. "vs segment") | — |
 
-The legend is only drawn when **Show leakage pills** is also on and at least one step in the data actually has a computed leakage value; an entry is skipped if its label is left empty. The visual reserves vertical space for the legend below the funnel so it never overlaps the bars.
+The legend is drawn when **Show legend** is on and at least one of these is true; an entry is skipped if its label is left empty:
+
+- **Show leakage pills** is on and at least one step has a computed leakage value;
+- the [extra columns](./additional-table) are shown and at least one continuous column has a **significance test result** in its cells.
+
+The legend therefore stays available when the leakage pills are turned off, as long as extra columns run significance tests. Its colors always come from this card (**Neutral / Above / Below** colors) — if you customize a column's own *Color above / below comparison*, the legend swatches no longer match that column. The labels are shared too; reword them (for example "Significantly higher") if the legend also covers columns. The visual reserves vertical space for the legend below the funnel so it never overlaps the bars.

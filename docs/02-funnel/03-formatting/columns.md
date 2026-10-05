@@ -41,6 +41,8 @@ Plain **Gap** is always computed against the **[Main Partition](./main-partition
 
 Independently from the funnel's leakage significance, each **continuous** column runs its **own** two-proportion z-test: the column's Score vs. its own **Comparison**, using that column's **own Significance level and Independence** — set per column in the [Additional Table](./additional-table#fields-per-column-up-to-8) dialog's *Significance* section, not shared with the [Leakage](./leakage#pills) card. This matters because a column's Score/Comparison roles don't have to mirror the main funnel's: e.g. a column can use a market-wide average as "Score" and a single brand as "Comparison" — the reverse of how Main Partition is normally wired — and its own **Independence** setting can be set accordingly (see [Leakage → Independence](./leakage#independence) for what the three options mean). The cell text is colored with **Color above/below comparison** accordingly, or the column's plain font color when the test is inconclusive or the Base/Comparison/Comparison base aren't all set. This coloring applies to whichever display mode is active, including the Comparison-based ones.
 
+The [Leakage → Legend](./leakage#legend) can explain these colors too, and is available even when the leakage pills are turned off.
+
 ## Column typography, width and separators
 
 Font, column width, header visibility and separator lines are configured **per column** in the [Additional Table](./additional-table) gear-icon dialog, alongside the measures and display mode.

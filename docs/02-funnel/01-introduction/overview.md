@@ -14,7 +14,8 @@ The **SDM Funnel** is a custom Power BI visual that displays a multi-step funnel
 |---------|-------------|
 | **Any number of steps** | Steps are the distinct values of the **Funnel Steps** categorical column, drawn as tapering bars ordered by descending score |
 | **Grouped funnels** | Optional **Group By** role repeats the whole funnel per value (e.g. one funnel per country or brand), side by side |
-| **Leakage tracking** | The drop-off (%) between consecutive steps is computed and shown in a pill at each junction, with an optional legend explaining the pill colors |
+| **Leakage tracking** | The drop-off (%) between consecutive steps is computed and shown in a pill at each junction, with an optional legend explaining the significance colors (pills and extra columns) |
+| **Empty-data handling** | When the filters leave no data, or a base is too small to publish, the funnel is replaced by a configurable message ([Global Threshold](../03-formatting/global-threshold)) |
 | **Significance testing** | A two-proportion z-test flags whether a group's score — or its leakage — is significantly above/below a **Comparison** (a segment average, another category, another year… whatever you bind), at a 90/95/99% confidence level |
 | **Competitor comparison** | Up to two additional "partitions" (Second / Third) overlay their own leakage % on the left of the funnel, connected by a configurable arrow shape |
 | **Up to 8 extra columns** | Each step can show either a **Continuous** measure (Value, Gap vs. the main score, Comparison value, Comparison Gap, or the combined variants, with configurable Precision and colored by significance) or a **Discrete** text/ordinal value (e.g. "1st", "2nd") shown as-is — editable via a JSON dialog behind a ⚙ gear icon |
