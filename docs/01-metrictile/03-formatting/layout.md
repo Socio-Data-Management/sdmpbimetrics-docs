@@ -56,3 +56,20 @@ To go back to automatic centering, switch **Custom positioning** back to **off**
 :::tip Mixing modes
 The Auto/Custom switch is global to all text blocks. If you want only one of them to be custom, drag both — but set the other one's X/Y to a value matching the auto position.
 :::
+
+## Output
+
+| Property | Description | Default |
+|----------|-------------|---------|
+| **Do not print or export** | The tile renders nothing when the report is exported or printed | Off |
+
+Intended for tiles that are report chrome rather than content — a [navigation or filter button](./button-mode), a decorative shape — and have no place in a PDF or a printout.
+
+It is the other half of the [transparent overlay technique](./button-mode#native-actions-the-transparent-overlay): native buttons are already excluded from print and export, so turning this on makes the custom-looking control disappear as a whole.
+
+Two different paths reach a printed page, and both are covered:
+
+- **Server-side exports** (Export to PDF, PowerPoint, image, and e-mail subscriptions) run the visual in Power BI's export host. The visual detects it through `hostEnv` and renders nothing, while still signalling `renderingFinished` so the export does not stall.
+- **The browser's own Print** renders the visual normally, so the tile is additionally hidden by an `@media print` rule.
+
+The tile keeps behaving normally on screen — only the printed and exported output is affected.

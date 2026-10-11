@@ -6,7 +6,7 @@ slug: /metrictile/getting-started/data-roles
 
 # Data Roles
 
-The MetricTile visual accepts five data roles — one **Grouping** and four **Measures**. Only **Value** is mandatory; the others enrich the tile when present.
+The MetricTile visual accepts seven data roles — one **Grouping** and six **Measures**. Only **Value** is mandatory; the others enrich the tile when present.
 
 | Data Role | Type | Description |
 |-----------|------|-------------|
@@ -15,6 +15,8 @@ The MetricTile visual accepts five data roles — one **Grouping** and four **Me
 | **Label** | Measure | The descriptive label (overrides the Category value and the static text in the Category Label card) |
 | **Series Color** | Measure | A hex color code (e.g. `#FF0000`) — overrides the shape **From** color and disables gradient |
 | **Logo** | Measure | A base64-encoded image rendered inside the tile |
+| **Logo (active)** | Measure | A second base64-encoded image, shown while a [Button Mode](../formatting/button-mode) button is in its On position |
+| **Tooltips** | Measure | Extra measures shown only in the tooltip when hovering the tile |
 
 :::info Single-row visual
 The MetricTile is designed to display a **single value**. The dataView is read with `value.max = 1`, `label.max = 1`, etc. Aggregate your data so each visual instance returns one row per role.
@@ -76,6 +78,12 @@ The logo appears as an `<image>` element layered behind the value/label text. It
 :::tip Image size
 Keep your base64 logos small (under 5 KB, typically 32×32 to 64×64 px). Large images bloat the data model and slow down Power BI.
 :::
+
+### Logo (active)
+
+**Logo (active)** is a second image, used when the tile acts as a [two-position button](../formatting/button-mode): **Logo** is shown while the button is Off, **Logo (active)** while it is On.
+
+Either role may be left empty — a single logo is then used in both positions. Outside Button Mode, only **Logo** is used.
 
 ## Color & logo resolution priority
 

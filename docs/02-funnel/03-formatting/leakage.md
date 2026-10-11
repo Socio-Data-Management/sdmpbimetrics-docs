@@ -71,15 +71,20 @@ An optional legend can be drawn below the funnel, explaining what each significa
 | **Show legend** | Master switch for the legend group | Off |
 | **Alignment** | Left / Center / Right | Center |
 | **Margin top (px)** | Space between the funnel and the legend | 4 |
-| **Font / Size / Bold / Italic / Underline** | Legend text typography | Segoe UI, 10px, not bold |
+| **Font / Size / Bold / Italic / Underline** | Legend text typography — applies to every entry, leakage or column | Segoe UI, 10px, not bold |
+| **Shrink to fit** | When the entries need more room than the legend may take (35% of the visual's height), reduces the text size, down to 7 px, until they fit | On |
 | **Neutral label** | Text next to the neutral color swatch | "Not significantly different" |
 | **Above label** | Text next to the above/bad color swatch | "Significantly higher leakage" |
 | **Below label** | Text next to the below/good color swatch | "Significantly lower leakage" |
 | **Suffix** | Optional extra text appended after the labels (e.g. "vs segment") | — |
 
-The legend is drawn when **Show legend** is on and at least one of these is true; an entry is skipped if its label is left empty:
+The legend holds two kinds of entries, and is drawn as soon as one exists:
 
-- **Show leakage pills** is on and at least one step has a computed leakage value;
-- the [extra columns](./additional-table) are shown and at least one continuous column has a **significance test result** in its cells.
+- **Leakage entries** (Neutral / Above / Below, from this card) — when **Show legend** is on, **Show leakage pills** is on and at least one step has a computed leakage value; an entry is skipped if its label is left empty;
+- **Column entries** — for every [extra column](./additional-table#significance-display) with **Add to legend** checked and a significance test that produced results. They are drawn with the column's own decoration (font color, icon, frame, background or free text) and don't depend on **Show legend** nor on the pills: the legend stays available when the leakage pills are off.
 
-The legend therefore stays available when the leakage pills are turned off, as long as extra columns run significance tests. Its colors always come from this card (**Neutral / Above / Below** colors) — if you customize a column's own *Color above / below comparison*, the legend swatches no longer match that column. The labels are shared too; reword them (for example "Significantly higher") if the legend also covers columns. The visual reserves vertical space for the legend below the funnel so it never overlaps the bars.
+Alignment, margin, typography and suffix of this group apply to all entries. Entries wrap onto several lines when they don't fit on one: the visual measures the legend and reserves that height below the funnel so nothing is cut and it never overlaps the bars. If there are too many entries for the room available, **Shrink to fit** reduces the text size; with it off, the funnel simply gets what is left.
+
+:::note
+These settings are in the Leakage card's *Legend* group even when only extra-column entries are shown; the group's own *Show legend* switch only governs the leakage entries.
+:::

@@ -3,7 +3,7 @@ import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {useThemeConfig} from '@docusaurus/theme-common';
 
-export default function NavbarLogo(): JSX.Element {
+export default function NavbarLogo(): React.JSX.Element {
     const {navbar} = useThemeConfig();
     const title = navbar.title;
     const homeUrl = useBaseUrl('/');

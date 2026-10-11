@@ -52,12 +52,40 @@ Each column's block has a few fields **always visible**, plus two **collapsible 
 | **Comparison base** | Measure picker | Optional — hidden when Score type is *Discrete* |
 | **Color above comparison** | Color | Default #cc0000 — hidden when Score type is *Discrete* |
 | **Color below comparison** | Color | Default #007700 — hidden when Score type is *Discrete* |
+| **Reverse test** | Checkbox | Swaps *above* and *below* for this column — see [Reverse test](#reverse-test) |
+| **Display mode** | Font color / Icon / Frame / Background / Free text | Default *Font color* — how a **significant** cell is flagged, see [Significance display](#significance-display) |
+| **Custom icon above / below (base64)** | Text | *Icon* mode only — a `data:image/…;base64,…` image; empty = the default triangle tinted with the column's color |
+| **Text above / below** | Text | *Free text* mode only — default `+` / `-`; any characters or emoji, empty = no symbol |
+| **Add to legend** | Checkbox | Adds this column's significance to the [legend](./leakage#legend) |
+| **Legend label** | Text | When *Add to legend* is on — one label for both directions, default "Significantly higher / lower" |
 
 Click **Add column** to append a new one (up to 8 total); an empty state ("No extra columns yet — click *Add column*.") is shown when none exist yet.
 
 :::tip Fields react live to Score type
 Switching a column's **Score type** between *Continuous* and *Discrete* immediately shows/hides the fields that only make sense for one of the two — no need to save and reopen the dialog. Existing columns saved before this setting existed default to *Continuous*, so nothing changes for reports created earlier.
 :::
+
+## Reverse test
+
+The test compares the column's **Score** with its **Comparison**: *above* means Score is significantly higher than Comparison. When the displayed figure is read from the other side, that wording is backwards. Typical case: Score = the N-1 average, Comparison = the current year N, display = **Gap**. A Gap of **-2.8** means N is below N-1 — yet the test says N-1 is significantly *above* N, so the cell would read "significantly higher" next to a negative number, with an arrow pointing the wrong way.
+
+Checking **Reverse test** swaps the two directions for this column only: *Score significantly higher than Comparison* is shown as **below**, and *lower* as **above**. Colors, icons, frames, texts and the legend all follow, so the sign, the arrow and the wording agree. The test itself (z value, level, independence) is unchanged.
+
+## Significance display
+
+A cell is flagged only when its test is significant (**above** or **below** the Comparison); neutral cells stay untouched. The **Display mode** picks how, using the column's **Color above / below comparison**:
+
+| Mode | Result |
+|------|--------|
+| **Font color** *(default)* | The value is written in the above/below color |
+| **Icon** | A triangle (▲ above, ▼ below) tinted with the color — or your own base64 image — right after the value |
+| **Frame** | A colored border around the cell |
+| **Background** | A light tint of the color behind the cell |
+| **Free text** | Characters of your choice (`+`, `-`, a letter, an emoji) in the color, right after the value |
+
+With any mode other than *Font color*, the value itself keeps the column's font color.
+
+**Add to legend** gives the column **one** legend entry: a sample number (123) shown with the *above* decoration then with the *below* one, followed by the **Legend label** prefixed with the column title (e.g. "Gap vs average — Significantly higher / lower"). The entry appears in the [legend](./leakage#legend) below the funnel whether or not the leakage pills or the Leakage legend are on, as long as the column actually runs a significance test.
 
 ## Conversion picto
 

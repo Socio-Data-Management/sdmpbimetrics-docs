@@ -1,0 +1,59 @@
+.builder {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.row label,
+.check {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.grow {
+  flex: 1 1 14rem;
+}
+
+.check {
+  flex-direction: row;
+  align-items: center;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.builder input:not([type='checkbox']),
+.builder select,
+.builder textarea {
+  font: inherit;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.output {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.output pre {
+  flex: 1;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  user-select: all;
+}

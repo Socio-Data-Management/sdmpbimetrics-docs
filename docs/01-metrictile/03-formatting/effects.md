@@ -42,6 +42,10 @@ The shadow is composed via SVG filters. The `Vertical × Horizontal` combination
 Shadow extension is integrated into the unified bounding box calculation: the shape is automatically scaled down to leave room for the shadow on the appropriate side. The shadow never bleeds back through the shape and never overflows the viewport.
 :::
 
+:::caution Taken over by the In/out button
+Turning on **In/out button** in the [Button Mode](./button-mode) card greys this group out. The shadow is then driven by the button position — outset while Off, inset while On — and uses its own fixed settings rather than the ones above.
+:::
+
 ## Glow
 
 A soft halo around the shape.
