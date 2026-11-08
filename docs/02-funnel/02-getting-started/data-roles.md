@@ -55,10 +55,10 @@ Score, Comparison and any per-column equivalents are expected to be numbers **on
 
 ### Significance testing
 
-A standard **two-proportion z-test** runs in two places, each with its **own** Significance level (90/95/99%) and **Independence** setting:
+A standard **two-proportion z-test** runs in two places, sharing one **Significance level** (90/95/99%) and one **variance method** (see the [Significance](../formatting/significance) card), each with its own **Independence** setting:
 
 - **Leakage pills** — is the group's step-to-step drop-off significantly worse (red) or better (green) than the comparison's own drop-off between the same two steps? Configured on the [Leakage](../formatting/leakage#pills) card.
-- **Column cells** — is the group's Score at this step significantly above (red) or below (green) its own Comparison? Configured **per column**, in the [Additional Table](../formatting/additional-table#significance-collapsible) dialog's *Significance* section.
+- **Column cells** — is the group's Score at this step significantly above (red) or below (green) its own Comparison? Configured **per column** (Comparison, Independence, colors…), in the [Additional Table](../formatting/additional-table#significance-collapsible) dialog's *Significance* section.
 
 Set **Independence** to something other than its default ("Main separate from comparison") when your **Comparison** measure isn't a genuinely separate sample from Main — see [Leakage → Independence](../formatting/leakage#independence) for the three options and when to use each. This matters for both the main funnel (via the Leakage card) and any column whose Score/Comparison roles are wired the opposite way round from Main Partition.
 

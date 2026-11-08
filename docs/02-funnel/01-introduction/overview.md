@@ -24,6 +24,7 @@ The **SDM Funnel** is a custom Power BI visual that displays a multi-step funnel
 | **Decorative frame** | Optional card/frame around each group, with background, shadow and halo |
 | **Full typography control** | Independent font family/size/style for the value, step label, competitor text, column cells and leakage legend |
 | **Localization** | Format pane fully localized in 10 languages |
+| **Entrance animation** | Fade, Grow or Cascade, replayed only when the data changes — see [Animation](../03-formatting/animation.md) |
 | **Licensing & watermark** | Free / Pro plans, watermark removed with a valid key |
 
 ## Interactivity

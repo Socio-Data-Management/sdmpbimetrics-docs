@@ -15,8 +15,9 @@ Typical uses: a country switch (Region A ↔ Region B), a "show only my segment"
 
 | Property | Description | Default |
 |----------|-------------|---------|
-| **Button Mode** (card toggle) | Turns the tile into a button. While off, the tile behaves as a normal metric tile and clicks cross-filter through the Selection API instead | Off |
+| **Button Mode** (card toggle) | Turns the tile into a button. While off, the tile behaves as a normal metric tile and clicks cross-filter through the Selection API instead | On |
 | **Button is On** | Current position of the button. Also sets the position the report opens with | Off |
+| **Filter by category** | While the button is On, cross-filters the page on the tile's **Category** value, exactly like a click on any other visual; the selection is cleared when the button goes Off. See [Filter by category](#filter-by-category) | On |
 | **In/out button** | Raised (outset shadow) while Off, pressed in (inset shadow) while On. Takes over the **Effects → Shadow** group, which is greyed out while this is on | Off |
 | **Filter JSON — On** | Filter applied while the button is On. Empty means *no filter in this position* | *(empty)* |
 | **Filter JSON — Off** | Filter applied while the button is Off. Empty means *no filter in this position* | *(empty)* |
@@ -26,13 +27,22 @@ Typical uses: a country switch (Region A ↔ Region B), a "show only my segment"
 The status is a **persisted property**, not a reading of the current page filters. It is saved with the report and restored on reload.
 
 - **Reading mode** — a plain click anywhere on the tile flips it.
-- **Edit mode** — a plain click belongs to the drag handles (text, logo, rotation), so the button answers to **Ctrl+click** (Cmd+click on macOS). Flipping the **Button is On** toggle in the formatting pane does exactly the same thing, which is the easiest way to test a filter while authoring.
+- **Edit mode** — a click on the **shape itself** flips it too, and so does **Ctrl+click** (Cmd+click on macOS) anywhere on the tile. A plain click on the **text or the logo** is the end of a drag and does *not* flip the button, so moving them never presses it by accident. Flipping the **Button is On** toggle in the formatting pane does exactly the same thing, which is the easiest way to test a filter while authoring.
 
 Flipping the status is the only thing a click does; the filter is applied by the render that follows. Click and pane toggle therefore always give the same result.
 
 :::info Bookmarks
 Bookmarks capture **filters and selections**. The filter a button applies is part of that, and the position itself is declared as filter state, so both are captured and restored together: a bookmark taken while the button was On comes back with the On filter *and* the On look. One bookmark per position is therefore a valid way to drive the button.
 :::
+
+## Filter by category
+
+Besides the Filter JSON payloads, the button can behave like any data point of a standard visual. With **Filter by category** on, switching the button **On** selects the tile's **Category** value through the Power BI selection manager — the same cross-filter a click on a bar of a native chart emits — and switching it **Off** clears that selection.
+
+- It needs a field bound to the **Category** role; without one there is nothing to select.
+- It is **independent** from the two Filter JSON boxes: use either, or both together (the page is then filtered by the selection *and* by the payload of the current position).
+- A selection restored by a bookmark is respected on first render; it is only cleared when the button is later switched Off.
+- Turn it off when the button must only apply its Filter JSON.
 
 ## Two-position logos
 

@@ -14,7 +14,6 @@ The **Leakage** card is a composite card grouping two concerns: the **Pills** dr
 | **Show leakage pills** | Master switch | On |
 | **Pill height (px)** | Height of the pill | 20 |
 | **Font size** | Text size inside the pill | 11 |
-| **Significance level** | Confidence level for the two-proportion z-test: 90%, 95% or 99% | 95% |
 | **Independence** | How Main and Comparison overlap — see [Independence](#independence) below | Main separate from comparison |
 | **Neutral color** | Pill border/text color when the drop-off isn't significantly different from the comparison | #888888 |
 | **Above average color (bad)** | Pill border/text color when the group's leakage is significantly **worse** than the comparison's | #cc0000 |
@@ -26,20 +25,14 @@ For each step after the first: `leakage % = (1 − score / previousScore) × 100
 
 ### How the color is decided
 
-If [Main Partition](./main-partition)'s **Base**, **Comparison** and **Comparison base** are all set for both the current and previous step, the visual runs a **two-proportion z-test** comparing the group's conditional drop-off against the comparison's own drop-off between the same two steps, using this card's **Significance level** and **Independence**. Otherwise the pill uses the **Neutral color**.
+If [Main Partition](./main-partition)'s **Base**, **Comparison** and **Comparison base** are all set for both the current and previous step, the visual runs a **two-proportion z-test** comparing the group's conditional drop-off against the comparison's own drop-off between the same two steps, using the [Significance](./significance) card's **Significance level** and **Signif. var. method**, and this card's **Independence**. Otherwise the pill uses the **Neutral color**. Which sample size that test is run on is spelled out in [Which base the test uses](#which-base-the-test-uses).
 
 :::info Above = bad, Below = good
 "Above average" means the group is **leaking more** than the comparison at that junction (bad) — colored with **Above average color**. "Below average" means the group is leaking less (good) — colored with **Below average color**. Don't confuse this with the [Columns](./columns) card, whose Above/Below refer to the raw Score, not leakage.
 :::
 
-:::info Significance level in practice
-| Level | z-threshold |
-|-------|-------------|
-| 90% | 1.645 |
-| 95% *(default)* | 1.96 |
-| 99% | 2.576 |
-
-A higher confidence level (99%) requires a larger gap between the group and the segment before a leakage pill or column cell is colored — fewer false positives, but also fewer cells flagged.
+:::info Significance level and variance method
+The confidence level (90 / 95 / 99%) and the variance formula (separate or pooled proportions) are set once, in the [Significance](./significance) card, and apply to the pills and to the extra columns alike.
 :::
 
 ## Independence
@@ -56,10 +49,27 @@ Two samples sharing observations breaks the independence assumption a two-propor
 If Comparison's base is actually *larger* than Main's, "Main is part of comparison" is the correct choice — but if you pick it when the nesting actually runs the other way (Main's base is the larger one), the subtraction produces a negative or out-of-range adjusted sample and the test falls back to **neutral** for every step, no matter how large the real gap is. If pills stay stubbornly gray with an option other than "Main separate from comparison" selected, double-check which of Main/Comparison is really the larger, containing sample.
 :::
 
-Each extra [column](./additional-table#fields-per-column-up-to-8) has its **own** Significance level and Independence, independent from this card's — useful when a column's Score/Comparison roles are wired the opposite way round from the main funnel (see the example above).
+Each extra [column](./additional-table#fields-per-column-up-to-8) has its **own** Independence, independent from this card's — useful when a column's Score/Comparison roles are wired the opposite way round from the main funnel (see the example above). A column can also override the **Significance level** (its default, *Inherit*, takes this card's); the variance method stays shared by every test.
 
 :::tip Ascending funnel
 When [Global Settings → Ascending funnel](./global-settings#ascending-funnel) is on, this card is renamed **Growth** in the Format pane and its **Show leakage pills** switch becomes **Show growth pills** (likewise, [Competition Leakage](./competition-leakage) becomes **Competition Growth**) — same cards, same properties, worded for a gain rather than a drop-off. The pill **formula and colors are unchanged**: the figure is still `(1 − score / previousScore) × 100` against the step above, and Above/Below still mean *underperforming / outperforming the comparison*. The **Neutral / Above / Below label** legend texts are free-form and aren't rewritten automatically — edit them yourself if you want growth wording (e.g. "Significantly higher leakage" → "Significantly lower growth").
+:::
+
+### Which base the test uses
+
+A leakage isn't a proportion of the sample, it's a **conditional** rate: out of those who reached step *n*, the share lost at step *n+1*. Its denominator is therefore the **upstream** step — step *n*, never the step where the drop lands:
+
+- **Tested proportion**: `l = 1 − score(n+1) / score(n)`
+- **Base of that proportion**: the respondents who actually **reached step n**, i.e. `base(n) × score(n)`
+
+`base(n)` is the [Main Partition](./main-partition) **Base** measure read at step *n* — usually the whole sample — so multiplying it by that step's score brings it back to the respondents present at *n*.
+
+Example: 1 000 respondents in the sample, 100% at step *n*, 75% at step *n+1*. The pill shows a 25% leakage, tested on **1 000** units. Had step *n* scored 60% instead, the same 25% leakage would be tested on 600 units: the test grows stricter as the funnel narrows, which is the intent — a drop measured on the few people still in the funnel carries less evidence.
+
+The comparison's leakage is built the same way, on `comparison base(n) × comparison(n)`. Both bases are computed **after** the Independence adjustment above, so a contribution subtracted out shrinks the base along with the proportion.
+
+:::note The denominator is treated as exact
+`l` is tested as a plain binomial proportion over that base, which ignores the sampling error of the denominator itself — step *n* is an estimate too. That is the usual convention for a conditional rate on nested steps; the practical consequence is a slightly anti-conservative test when step *n* is itself very low.
 :::
 
 ## Legend

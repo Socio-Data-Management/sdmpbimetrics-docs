@@ -25,6 +25,9 @@ The **SDM MetricTile** is a custom Power BI visual that displays a single numeri
 | **Conditional formatting** | Most properties (colors, transparency, font sizes, rotation, corner radius) support fx rules |
 | **Prefix label** | Optional text prefix in front of the value (currency, units…) |
 | **Category label** | Optional descriptive label below or beside the value |
+| **Button Mode** | The tile becomes a two-position button that cross-filters the page (on its Category, and/or with a Filter JSON per position), with an in/out look and a logo per position — see [Button Mode](../03-formatting/button-mode.md) |
+| **Rotate text with the shape** | Optionally rotate the text and logo along with the shape |
+| **Entrance animation** | Fade, Grow or Cascade, replayed only when the data changes — see [Animation](../03-formatting/animation.md) |
 | **Licensing & watermark** | Free / Pro plans, watermark removed with a valid key |
 
 ## Editions

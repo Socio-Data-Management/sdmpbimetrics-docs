@@ -24,6 +24,9 @@ function HomepageHeader() {
           <Link className="button button--secondary button--lg" to="/docs/funnel/introduction/overview">
             Funnel Docs
           </Link>
+          <Link className="button button--secondary button--lg" to="/docs/wordcloud/introduction/overview">
+            WordCloud Docs
+          </Link>
         </div>
         <div className={styles.heroImage}>
           <img src={useBaseUrl("/img/hero-screenshot.png")} alt="SDM Metrics" />
@@ -46,7 +49,7 @@ function FeatureCard({title, description, link, icon}: {title: string, descripti
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout title={siteConfig.title} description="Documentation for Socio-DM's custom Power BI visuals — MetricTile and Funnel">
+    <Layout title={siteConfig.title} description="Documentation for Socio-DM's custom Power BI visuals — MetricTile, Funnel and WordCloud">
       <HomepageHeader />
       <main>
         <div className="container" style={{padding: '3rem 0'}}>
@@ -62,6 +65,12 @@ export default function Home(): ReactNode {
               description="A multi-step funnel with leakage tracking, statistical significance testing against a benchmark segment, competitor comparison and up to 8 extra columns."
               link="/docs/funnel/introduction/overview"
               icon="&#x1F4C9;"
+            />
+            <FeatureCard
+              title="WordCloud"
+              description="A word cloud that tests which words are significantly over- or under-represented, with shape and image masks, live search and cross-filtering."
+              link="/docs/wordcloud/introduction/overview"
+              icon="&#x1F4AC;"
             />
           </div>
         </div>

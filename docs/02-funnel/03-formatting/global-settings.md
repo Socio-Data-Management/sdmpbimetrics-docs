@@ -15,7 +15,7 @@ The **Global Settings** card is a composite card grouping three unrelated concer
 | **Sort on funnel value** | When on, steps are sorted from the highest Score to the lowest, giving the classic tapering funnel shape. When off, steps keep the order they appear in the data | On |
 | **Ascending funnel** | When on *(and **Sort on funnel value** is also on)*, steps are sorted from the **lowest** Score to the highest and the whole visual is framed as **growth** instead of loss — see [Ascending funnel](#ascending-funnel) below. No effect when **Sort on funnel value** is off | Off |
 
-See [Data Roles → Score, Base, Comparison, Comparison base](../getting-started/data-roles#score-base-comparison-comparison-base--what-they-mean) for what feeds the significance test, and [Leakage → Significance level / Independence](./leakage#pills) for where it's configured.
+See [Data Roles → Score, Base, Comparison, Comparison base](../getting-started/data-roles#score-base-comparison-comparison-base--what-they-mean) for what feeds the significance test, and [Significance](./significance) (level and variance method) and [Leakage → Independence](./leakage#independence) for where it's configured.
 
 :::tip When a later step can score higher than an earlier one
 Some funnels aren't strictly decreasing — e.g. a **Good Opinion** step can score higher than **Familiarity** when the option was also asked to observations that don't know the product. Turn **Sort on funnel value** off to keep the steps in their natural data order instead of re-sorting them by Score. Pairing this with [Bars → Rectangle bars](./bars#properties) avoids a shape that reads as an inconsistent funnel.

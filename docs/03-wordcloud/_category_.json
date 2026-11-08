@@ -1,0 +1,8 @@
+{
+  "label": "WordCloud",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "wordcloud/introduction/overview"
+  }
+}

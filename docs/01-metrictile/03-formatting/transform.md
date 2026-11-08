@@ -20,6 +20,11 @@ The **Transform** card applies horizontal/vertical mirroring and free rotation t
 | **Mirror Horizontal** | Flip the shape along its vertical axis | Off |
 | **Mirror Vertical** | Flip the shape along its horizontal axis | Off |
 | **Rotation (deg)** | Rotation angle, 0–360°. Supports conditional formatting (fx). | 0 |
+| **Rotate Text & Logo** | Rotate the text and the logo together with the shape. See [below](#rotate-text--logo) | Off |
+
+## Rotate Text & Logo
+
+By default only the shape rotates: the value, the label and the logo stay upright and readable. With **Rotate Text & Logo** on, the text and the logo are laid out in the shape's *unrotated* frame, then the whole content layer is rotated about the shape's center along with the shape — so a tile turned 90° carries vertical text. Mirroring never mirrors the text, which stays legible. The content follows live while the rotation handle is dragged.
 
 ## Why mirroring matters
 

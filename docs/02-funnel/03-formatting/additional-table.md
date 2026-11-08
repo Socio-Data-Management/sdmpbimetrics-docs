@@ -21,7 +21,7 @@ Each column's block has a few fields **always visible**, plus two **collapsible 
 
 | Field | Type | Notes |
 |-------|------|-------|
-| **Column title** | Text | Spans two grid cells in the dialog |
+| **Column title** | Text | Spans two grid cells in the dialog — accepts `%[Field name]` placeholders, see [A title that follows the data](#a-title-that-follows-the-data) |
 | **Score type** | Continuous / Discrete | Default *Continuous* — see [Columns → Continuous vs. Discrete columns](./columns#continuous-vs-discrete-columns) |
 | **Score measure** | Measure picker | Required — a column with no Score is skipped entirely |
 | **Base** | Measure picker | Optional — hidden when Score type is *Discrete* |
@@ -46,8 +46,8 @@ Each column's block has a few fields **always visible**, plus two **collapsible 
 
 | Field | Type | Notes |
 |-------|------|-------|
-| **Significance level** | 90% / 95% / 99% | Default 95% — hidden when Score type is *Discrete* — this column's **own** level, independent from [Leakage → Significance level](./leakage#pills) |
-| **Independence** | Main separate from comparison / Main is part of comparison / Comparison is part of Main | Default *Main separate from comparison* — hidden when Score type is *Discrete* — see [Leakage → Independence](./leakage#independence) for what the three options mean |
+| **Significance level** | Inherit (Significance card) / 90% / 95% / 99% | Default *Inherit* — hidden when Score type is *Discrete* — see [A level per column](#a-level-per-column) below |
+| **Independence** | Main separate from comparison / Main is part of comparison / Comparison is part of Main | Default *Main separate from comparison* — hidden when Score type is *Discrete* — the variance method is that of the [Significance](./significance) card — see [Leakage → Independence](./leakage#independence) for what the three options mean |
 | **Comparison** | Measure picker | Optional — hidden when Score type is *Discrete* |
 | **Comparison base** | Measure picker | Optional — hidden when Score type is *Discrete* |
 | **Color above comparison** | Color | Default #cc0000 — hidden when Score type is *Discrete* |
@@ -64,6 +64,48 @@ Click **Add column** to append a new one (up to 8 total); an empty state ("No ex
 :::tip Fields react live to Score type
 Switching a column's **Score type** between *Continuous* and *Discrete* immediately shows/hides the fields that only make sense for one of the two — no need to save and reopen the dialog. Existing columns saved before this setting existed default to *Continuous*, so nothing changes for reports created earlier.
 :::
+
+## A title that follows the data
+
+A **Column title** typed in the dialog is fixed text. To have it change with the report's filters — the current wave, the number of candidates, a label computed in DAX — use a [title constant](./title-constants): a measure bound through **fx** on the Title Constants card, referenced in the title between `%[` and `]`.
+
+The reference is substituted **inside** the text, so the wording around it is kept:
+
+| Typed in **Column title** | Rendered, `ConstantNum1` = 14 |
+|---|---|
+| `Rank` | Rank |
+| `Rank (/%[ConstantNum1])` | Rank (/14) |
+| `%[ConstantNum1]` | 14 |
+
+The picker under the **Column title** box lists the constants currently configured, each with a preview of its value, and inserts the reference for you. Name matching ignores case, spaces and punctuation (`%[ConstantNum1]`, `%[constant_num1]` and `%[CONSTANTNUM1]` are the same constant).
+
+- A name that matches **no** constant is left on screen as `%[Typo]`, so a misspelling is visible rather than silent.
+- A constant that resolves to nothing gives an empty string (the column then falls back to "Col *n*", as an untitled column does).
+
+:::tip Why a constant rather than a field in a well
+A label measure dropped in a data well is returned for every step and every series — many copies of the same string to carry it once — and it shifts the position of the other measures. A title constant is evaluated outside the wells. Putting the field in a well does still work as a silent fallback (`%[My measure]` resolves against the fields present, taking their first value), but the ⚙ picker deliberately does not offer it.
+:::
+
+:::note Why not the *fx* button directly in the dialog?
+Power BI's **fx** button is drawn by the host next to a Format-pane slice, and a rule it builds resolves to one value for one property. The ⚙ dialog's columns all share a *single* formatting property (the Additional Table JSON), so fx has nothing to attach to there. The Title Constants card is the way round: the fx buttons live on the card, where the host can draw them, and the dialog references their result.
+:::
+
+## A level per column
+
+**Significance level** decides how large this column's gap must be before its cell is flagged. It is left on **Inherit (Significance card)** by default: the column then follows the [Significance](./significance) card's level, so changing that one dropdown still re-judges the whole report — pills and every column at once.
+
+Picking 90%, 95% or 99% instead overrides it **for that column only**. Typical reasons:
+
+- a column read on a **small sub-sample** (one region, one age bracket) where 95% flags almost nothing useful — 90% is the level the study protocol specifies for it;
+- a **headline column**, the one the reader will quote, held to 99% while the exploratory columns stay at 95%.
+
+What a level does **not** change is the test itself: the z value, the bases, the Independence adjustment and the variance method are identical — only the threshold the z value is compared against moves (1.645 / 1.96 / 2.576, see [Significance level](./significance#significance-level)). The **Signif. var. method** stays shared by every test of the visual and cannot be set per column, so a leakage and a gap are never computed with different formulas.
+
+:::caution A mixed-level table needs saying so
+Two columns side by side flagged at different levels look identical on screen — nothing in the cell says one was judged at 90% and its neighbour at 99%. When you override a column's level, write it in the column title or in its [legend label](#significance-display) (e.g. "Gap vs N-1 (90%)"), otherwise the reader will compare flags that don't mean the same thing.
+:::
+
+Columns saved before this field existed carry no level and therefore read as **Inherit** — exactly the behaviour they had.
 
 ## Reverse test
 
