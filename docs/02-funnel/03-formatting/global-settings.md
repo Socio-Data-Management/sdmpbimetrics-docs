@@ -7,6 +7,10 @@ title: Global Settings
 
 The **Global Settings** card is a composite card grouping three unrelated concerns that apply to the whole visual: **Options**, **Value Font** and **Step Label Font**.
 
+![Global Settings panel — Options and Value Font groups](../../images/02-funnel-global-settings-panel.png)
+
+![Global settings — sorted on value, data order, larger black values, italic step labels](../../images/02-funnel-global-settings.png)
+
 ## Options
 
 | Property | Description | Default |

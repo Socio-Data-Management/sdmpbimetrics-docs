@@ -49,6 +49,8 @@ The label text is resolved with the following priority (first non-empty wins):
 
 ## Series Color
 
+![Data-driven styling — Series Color and Logo measures drive the fill and the image of each tile](../../images/01-metrictile-data-driven.png)
+
 Use a measure that returns a **hex color string** to drive the tile color from your data model. Common patterns:
 
 ```dax

@@ -13,6 +13,10 @@ The **Transform** card applies horizontal/vertical mirroring and free rotation t
   <source src={useBaseUrl("/videos/03-Transform.webm")} type="video/webm" />
 </video>
 
+![Transform card — Horizontal / Vertical mirror, Rotation and Rotate Text & Logo](../../images/01-metrictile-transform-panel.png)
+
+![Transform examples — arrow at 0°, 90°, 180° and 270°, chevron mirrored horizontally, triangle mirrored vertically](../../images/01-metrictile-transform.png)
+
 ## Properties
 
 | Property | Description | Default |

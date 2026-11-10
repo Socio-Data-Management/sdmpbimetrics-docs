@@ -7,6 +7,8 @@ title: Additional Table
 
 The **Additional Table** card stores the JSON-backed configuration for [extra columns](./columns), edited through a dedicated dialog rather than typed by hand.
 
+![Additional Table panel — the columns definition (JSON)](../../images/02-funnel-additional-table-panel.png)
+
 ## Opening the editor
 
 1. Select the visual and enter **edit mode** (or focus mode) with at least one measure bound to **Values**

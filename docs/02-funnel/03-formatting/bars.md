@@ -7,6 +7,10 @@ title: Bars
 
 The **Bars** card controls the shape, gradient and spacing of the funnel's tapering bars (trapezoids).
 
+![Bars panel — constant size, rectangle bars, colors, opacities and gap](../../images/02-funnel-bars-panel.png)
+
+![Bar variants — proportional width, constant taper, rectangle bars, opaque blue gradient with a wider gap](../../images/02-funnel-bars.png)
+
 ## Properties
 
 | Property | Description | Default |

@@ -7,6 +7,8 @@ title: Animation
 
 The **Animation** card plays a short **entrance animation** when the funnel appears or when its data changes.
 
+![Animation panel — type and duration](../../images/02-funnel-animation-panel.png)
+
 ## Properties
 
 | Property | Description | Default |

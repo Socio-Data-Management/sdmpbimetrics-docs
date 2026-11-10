@@ -9,6 +9,10 @@ The **Shape** card controls the geometric form of the tile, its fill color and a
 
 ![Shape formatting card](../../images/03-shape-card.png)
 
+![Shapes — Rectangle, Circle, Trapezoid, Star (5pt), Arrow and Chevron](../../images/01-metrictile-shapes.png)
+
+![Fill and gradients — solid colors, horizontal, vertical, diagonal down and diagonal up gradients](../../images/01-metrictile-gradients.png)
+
 ## Properties
 
 | Property | Description | Default |
@@ -55,6 +59,8 @@ When the **Series Color** data role is bound to a measure, the gradient is autom
 :::
 
 ## Transparency & conditional formatting
+
+![Transparency examples, from opaque to highly transparent tiles](../../images/01-metrictile-transparency.png)
 
 Transparency, From Color and To Color all expose the **fx** button. Use it to drive these properties from a measure or rule based on your data:
 

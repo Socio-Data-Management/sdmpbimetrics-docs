@@ -12,6 +12,10 @@ The **Logo** card controls the size and position of the image bound to the **Log
   <source src={useBaseUrl("/videos/03-Logo.webm")} type="video/webm" />
 </video>
 
+![Logo card — Width, Height, X and Y](../../images/01-metrictile-logo-panel.png)
+
+![Logo examples — 40 px default behind the value, 120 px, small top-left logo, width 150 with automatic height, logo above the value, logo to the right of the value](../../images/01-metrictile-logo.png)
+
 ## Properties
 
 | Property | Description | Default |

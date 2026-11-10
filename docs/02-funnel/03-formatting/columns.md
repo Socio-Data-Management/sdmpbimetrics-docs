@@ -9,6 +9,8 @@ Beyond the funnel bars, the visual can draw up to **8 extra data columns** to th
 
 Columns are configured through the **Additional Table** card, edited via a **⚙ gear-icon dialog** on the visual rather than typed into the Format pane directly — see [Additional Table](./additional-table) for the editor itself and the full field list. This page covers the concepts shared by every column, regardless of its settings.
 
+![Extra columns — competitor scores with their gaps on the left, market average and difference level on the right](../../images/02-funnel-columns.png)
+
 ## Turning columns on
 
 **Global Settings → Options → Show extra columns** must be **on** for any configured column to render.

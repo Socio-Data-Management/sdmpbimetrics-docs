@@ -7,6 +7,10 @@ title: Colors
 
 The **Colors** card sets how words are colored when no other rule takes over.
 
+![Colors panel — mode, single color and gradient colors](../../images/03-wordcloud-colors-panel.png)
+
+![Color modes — categorical palette, single color, gradient by value, Series Color measure](../../images/03-wordcloud-colors.png)
+
 ## Properties
 
 | Property | Description | Default |

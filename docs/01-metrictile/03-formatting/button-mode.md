@@ -11,6 +11,12 @@ The **Button Mode** card turns the tile into a **two-position button**. Clicking
 
 Typical uses: a country switch (Region A ↔ Region B), a "show only my segment" toggle, or a branded image button that filters the page it sits on.
 
+![Button Mode card — Button is On, Actual button, Filter by category and the two filter JSON fields](../../images/01-metrictile-button-mode-panel.png)
+
+![Button off — the page is not filtered](../../images/01-metrictile-button-off.png)
+
+![Button on — the logo switches to the active image and the page is filtered](../../images/01-metrictile-button-on.png)
+
 ## Properties
 
 | Property | Description | Default |

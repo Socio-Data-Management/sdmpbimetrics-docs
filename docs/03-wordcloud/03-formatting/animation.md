@@ -7,6 +7,8 @@ title: Animation
 
 The **Animation** card plays a short **entrance animation** when the cloud appears or when its data changes.
 
+![Animation panel — type and duration](../../images/03-wordcloud-animation-panel.png)
+
 ## Properties
 
 | Property | Description | Default |

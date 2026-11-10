@@ -7,6 +7,10 @@ title: Group Header
 
 The **Group Header** card controls the optional logo and/or name shown above each group's funnel — the label that identifies *which* group (e.g. which country or brand) a given funnel belongs to when [Group By](../getting-started/data-roles#group-by) is bound.
 
+![Group Header panel — logo measure, logo and text switches, size and placement](../../images/02-funnel-group-header-panel.png)
+
+![One funnel per market, each with its flag straddling the frame](../../images/02-funnel-group-header.png)
+
 ## Properties
 
 | Property | Description | Default |

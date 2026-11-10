@@ -13,6 +13,10 @@ The **Corners** card defines how each corner of the shape is rendered. Per-corne
 </video>
 
 
+![Corners card — Corner Radius and per-corner type](../../images/01-metrictile-corners-panel.png)
+
+![Corner examples — right angles, rounded, mixed corner types, rounded diamond, rounded inward, rounded star](../../images/01-metrictile-corners.png)
+
 ## Properties
 
 | Property | Description | Default |

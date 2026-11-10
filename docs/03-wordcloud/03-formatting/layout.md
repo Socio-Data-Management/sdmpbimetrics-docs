@@ -7,6 +7,10 @@ title: Layout
 
 The **Layout** card controls the typography and the placement of the words.
 
+![Layout panel — font, sizes, size scale, rotation, spacing, spiral and random seed](../../images/03-wordcloud-layout-panel.png)
+
+![Layout variants — horizontal only and linear, horizontal + vertical with Georgia, free angles with a logarithmic scale and a rectangular spiral](../../images/03-wordcloud-layout.png)
+
 ## Properties
 
 | Property | Description | Default |

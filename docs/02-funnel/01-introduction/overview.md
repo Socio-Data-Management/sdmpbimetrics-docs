@@ -8,6 +8,8 @@ slug: /funnel/introduction/overview
 
 The **SDM Funnel** is a custom Power BI visual that displays a multi-step funnel (awareness → consideration → purchase, survey drop-off, conversion pipelines…) with built-in **leakage tracking**, **statistical significance testing against a comparison**, **competitor/other-partition comparison**, and up to **8 extra data columns** per step.
 
+![SDM Funnel — leakage funnel with competitor columns, and an ascending growth funnel with significance levels](../../images/02-funnel-hero.png)
+
 ## Key Features
 
 | Feature | Description |

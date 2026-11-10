@@ -7,6 +7,8 @@ title: Second Partition
 
 The **Second Partition** card binds an optional competitor, market, or benchmark score that is overlaid as a small comparison track on the **left side** of the funnel, one entry per step junction. See [Competition Leakage](./competition-leakage) for how it's drawn (arrow shape, colors, font).
 
+![Second Partition panel — score measure, name, logo and logo size](../../images/02-funnel-second-partition-panel.png)
+
 ## Properties
 
 | Property | Description | Default |

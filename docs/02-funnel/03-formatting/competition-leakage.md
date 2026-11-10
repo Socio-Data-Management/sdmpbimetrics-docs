@@ -7,6 +7,10 @@ title: Competition Leakage
 
 The **Competition Leakage** card styles the arrow and text used to display the [Second Partition](./second-partition) / [Third Partition](./third-partition) comparison tracks on the left of the funnel.
 
+![Competition Leakage panel — arrow, shape, color, transparency and text](../../images/02-funnel-competition-leakage-panel.png)
+
+![Arrow shapes — curved arrow, asymmetric curved arrow, curved ribbon, no arrow](../../images/02-funnel-competition-leakage.png)
+
 ## Properties
 
 | Property | Description | Default |

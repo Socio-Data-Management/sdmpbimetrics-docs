@@ -7,6 +7,10 @@ title: Leakage
 
 The **Leakage** card is a composite card grouping two concerns: the **Pills** drawn at each junction between two consecutive bars (showing the **step-to-step drop-off (%)** for the main funnel), and an optional **Legend** explaining what the pill colors mean.
 
+![Leakage panel — pill height, font size, independence and the three significance colors](../../images/02-funnel-leakage-panel.png)
+
+![Leakage variants — default pills, pills off, larger pills, growth pills of an ascending funnel](../../images/02-funnel-leakage.png)
+
 ## Pills
 
 | Property | Description | Default |

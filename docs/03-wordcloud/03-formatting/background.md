@@ -7,6 +7,12 @@ title: Background
 
 The **Background** card pours the cloud into a **silhouette**: a preset shape or the shape of an image you provide. With **None**, the cloud simply fills the rectangle of the visual.
 
+![Background panel — shape, image, opacity, ellipticity, rotation, shrink to fit, grid and time budget](../../images/03-wordcloud-background-panel.png)
+
+![Preset shapes — circle, star, cardioid with rotation respected](../../images/03-wordcloud-shapes.png)
+
+![Custom image mask — image shown at 20 %, and the same mask with the image hidden](../../images/03-wordcloud-background-image.png)
+
 ## Properties
 
 | Property | Description | Default |

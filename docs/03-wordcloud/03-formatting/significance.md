@@ -7,6 +7,10 @@ title: Significance
 
 The **Significance** card decides which words are **significantly more or less frequent** than a reference, and how they are highlighted.
 
+![Significance panel — test, level, variance, minimum base, colors and highlight style](../../images/03-wordcloud-significance-panel.png)
+
+![Words tested against the global average (color + bold) and against the previous wave (color + outline)](../../images/03-wordcloud-significance.png)
+
 ## Properties
 
 | Property | Description | Default |

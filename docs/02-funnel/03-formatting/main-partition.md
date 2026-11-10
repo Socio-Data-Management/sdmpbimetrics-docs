@@ -7,6 +7,10 @@ title: Main Partition
 
 The **Main Partition** card binds the measures that drive the funnel bars themselves — this is the primary, mandatory data source of the visual.
 
+![Main Partition panel — score, base, comparison, name and logo](../../images/02-funnel-main-partition-panel.png)
+
+![From a basic funnel to leakage, a competitor, a frame with a logo and a second competitor](../../images/02-funnel-partitions.png)
+
 ## Properties
 
 | Property | Description | Default |

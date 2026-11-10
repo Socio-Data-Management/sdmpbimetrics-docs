@@ -8,6 +8,8 @@ slug: /wordcloud/introduction/overview
 
 The **SDM WordCloud** is a custom Power BI visual that turns a text column into a word cloud — and goes one step further: it **tests which words are statistically over- or under-represented** and highlights them, so the cloud reports a finding instead of just drawing a shape.
 
+![SDM Word Cloud — data-driven colors with horizontal and vertical words](../../images/03-wordcloud-hero.png)
+
 ## Key Features
 
 | Feature | Description |

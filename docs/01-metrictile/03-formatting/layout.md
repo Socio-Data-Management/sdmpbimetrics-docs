@@ -13,6 +13,10 @@ The **Layout** card controls how the **Value** and **Label** text blocks are pos
 </video>
 
 
+![Layout card — Mode, Custom positions and Output](../../images/01-metrictile-layout-panel.png)
+
+![Layout examples — default, prefix label, label under value, top-left and bottom-right alignment, bold prefix](../../images/01-metrictile-labels-layout.png)
+
 ## Mode
 
 | Property | Description | Default |

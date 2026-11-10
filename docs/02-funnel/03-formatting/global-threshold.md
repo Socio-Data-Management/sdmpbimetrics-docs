@@ -7,6 +7,10 @@ title: Global Threshold
 
 The **Global Threshold** card decides when the funnel must **not** be drawn, and what is shown in its place. It covers two situations: an **empty dataset** and a **conditional threshold** (typically a base too small to be published).
 
+![Global Threshold panel — messages, test, alignment and typography](../../images/02-funnel-global-threshold-panel.png)
+
+![The funnel replaced by the conditional message when the total weight is under the threshold](../../images/02-funnel-global-threshold.png)
+
 ## When the funnel is replaced
 
 | Situation | Trigger | Message shown | Needs the *Empty Panel* switch? |

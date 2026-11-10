@@ -13,6 +13,10 @@ The **Border** card draws an outline around the shape.
   <source src={useBaseUrl("/videos/03-Borders.webm")} type="video/webm" />
 </video>
 
+![Border card — Color, Width and Style](../../images/01-metrictile-border-panel.png)
+
+![Border and effects examples — solid, dashed and dotted borders (top), drop shadow, glow, and shadow with soft edge (bottom)](../../images/01-metrictile-border-effects.png)
+
 ## Properties
 
 | Property | Description | Default |

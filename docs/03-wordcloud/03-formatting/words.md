@@ -7,6 +7,10 @@ title: Words
 
 The **Words** card cleans the text of the **Words** column before anything is counted.
 
+![Words panel — case, combine duplicates and minimum length](../../images/03-wordcloud-words-panel.png)
+
+![Words settings at work — UPPERCASE and minimum length 3 in the middle, Capitalize on the right](../../images/03-wordcloud-filtering.png)
+
 ## Properties
 
 | Property | Description | Default |

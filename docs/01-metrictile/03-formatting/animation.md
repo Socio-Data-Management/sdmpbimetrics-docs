@@ -7,6 +7,8 @@ title: Animation
 
 The **Animation** card plays a short **entrance animation** when the tile appears or when its data changes.
 
+![Animation card — Type and Duration](../../images/01-metrictile-animation-panel.png)
+
 ## Properties
 
 | Property | Description | Default |

@@ -7,6 +7,10 @@ title: Filtering
 
 The **Filtering** card is a composite card with two groups: **Limits** and **Live search**.
 
+![Filtering panel — Limits and Live search groups](../../images/03-wordcloud-filtering-panel.png)
+
+![Filtering — raw answers, stop words with a minimum length, top 15 words with the live search box](../../images/03-wordcloud-filtering.png)
+
 ## Limits
 
 | Property | Description | Default |

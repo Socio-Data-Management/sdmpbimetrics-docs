@@ -13,6 +13,10 @@ The **Effects** card is a composite card grouping three visual effects: **Shadow
 </video>
 
 
+![Effects card — Shadow, Glow and Edge groups](../../images/01-metrictile-effects-panel.png)
+
+![Border and effects examples — solid, dashed and dotted borders (top), drop shadow, glow, and shadow with soft edge (bottom)](../../images/01-metrictile-border-effects.png)
+
 ## Shadow
 
 A directional drop shadow that extends outward from the shape.

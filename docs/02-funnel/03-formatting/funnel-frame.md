@@ -7,6 +7,10 @@ title: Funnel Frame
 
 The **Funnel Frame** card draws an optional decorative card around each group's funnel — background, border, shadow and halo.
 
+![Funnel Frame panel — color, border, radius, background, shadow and halo](../../images/02-funnel-frame-panel.png)
+
+![Frame variants — no frame, frame with shadow, blue frame with halo, cream background without shadow](../../images/02-funnel-frame.png)
+
 ## Properties
 
 | Property | Description | Default |

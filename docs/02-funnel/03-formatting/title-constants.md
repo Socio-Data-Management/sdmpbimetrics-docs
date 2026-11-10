@@ -9,6 +9,8 @@ The **Title Constants** card holds up to five text values and five numeric value
 
 It exists for one reason: a title that changes with the data needs a value *from* the data, and the obvious way to get one — dropping a label measure in a data well — is the expensive way. A measure placed in a well is returned for every step and every series, many copies of the same string to carry it once, and it shifts the position of the other measures. A constant bound through fx is evaluated outside the wells.
 
+![Title Constants panel — number of string and numeric constants](../../images/02-funnel-title-constants-panel.png)
+
 ## Fields
 
 | Field | Range | Default | Notes |

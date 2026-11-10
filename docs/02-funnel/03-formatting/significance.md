@@ -7,6 +7,10 @@ title: Significance
 
 The **Significance** card holds the settings that drive **every** significance test of the visual: the **leakage pills** of the [Leakage](./leakage) card and the **gap cells** of the [extra columns](./columns#column-level-significance).
 
+![Significance panel — significance level and variance method](../../images/02-funnel-significance-panel.png)
+
+![Leakage pills colored by the test against the market average, with the legend below](../../images/02-funnel-significance.png)
+
 | Property | Description | Default |
 |----------|-------------|---------|
 | **Significance level** | Confidence level of the two-proportion z-test: 90%, 95% or 99% | 95% |
